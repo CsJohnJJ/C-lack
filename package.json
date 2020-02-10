@@ -22,7 +22,9 @@
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "webpack": "webpack --watch --mode=development",
+    "postinstall": "webpack"
   },
   "repository": {
     "type": "git",
@@ -34,5 +36,9 @@
   "bugs": {
     "url": "https://github.com/CsJohnJJ/C-lack/issues"
   },
-  "homepage": "https://github.com/CsJohnJJ/C-lack#readme"
+  "homepage": "https://github.com/CsJohnJJ/C-lack#readme",
+  "engines": {
+    "node": "10.13.0",
+    "npm": "6.9.0"
+  }
 }
