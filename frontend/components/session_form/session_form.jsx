@@ -13,6 +13,7 @@ class SessionForm extends React.Component {
     this.handleDemoUser = this.handleDemoUser.bind(this);
   }
 
+
   handleSubmit(e) {
     e.preventDefault();
     this.props.processForm(this.state);
@@ -52,6 +53,7 @@ class SessionForm extends React.Component {
 
     return errors;
   }
+
 
   render() {
     let moreInput = () => {};

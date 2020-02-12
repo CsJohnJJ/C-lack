@@ -1,0 +1,40 @@
+.site-title{
+    display: flex;
+}
+
+.login-form-container{
+    text-align: center;
+    border: 1px solid grey;
+    background-color: white;
+    width: 40%;
+    padding: 6%;
+    margin-top: 60px;
+    border-radius: 5px;
+    box-shadow: 0 1px 0 rgba(77, 75, 75, 0.25);
+}
+
+.login-input{
+    border: 1px solid black;
+    width: 100%;
+    height: 40px;
+    border-radius: 6px;
+    
+}
+
+.main-div{
+    display: flex;
+    background-color:#fbfbfb;
+    justify-content: center;
+}
+
+
+.login-button{
+    background-color: #247a5a;
+    border-radius: 6px;
+    width: 100%;
+    height: 40px;
+    align-content: center;
+    text-align: center;
+}
+
+
