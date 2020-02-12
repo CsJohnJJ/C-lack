@@ -74,6 +74,7 @@ class SessionForm extends React.Component {
               <br/>
               <button className="input session-button">{this.props.formType}</button>
           </form>
+          <p>Try out C-lack as a Demo User</p>
       </div>
       );
     };
