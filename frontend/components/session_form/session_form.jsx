@@ -22,38 +22,65 @@ class SessionForm extends React.Component {
     return e => {
       this.setState({ [field]: e.currentTarget.value });
     };
-  };
+  }
 
   handleDemoUser() {
-       this.props.processForm({ username: "demouser", password: "password" });
+    let user = { username: "demouser", password: "password" }
+    this.props.processForm(user);
   }
- 
+
+  // handleDemoUser() {
+  //   // debugger
+  //   let user = { username: "demouser", password: "password" }(
+  //     this.props.fromType === "Sign Up"
+  //   )
+  //     ? this.props.demologin(user)
+  //     : this.props.processForm(user);
+  // }
+
+  renderErrors() {
+    let errors = null;
+    if (this.props.errors) {
+      errors = (
+        <ul className="errors-list">
+          {this.props.errors.map((error, i) => {
+            return <li key={`error-${i}`}>{error}</li>;
+          })}
+        </ul>
+      );
+    }
+
+    return errors;
+  }
+
   render() {
-    let moreInput = () => {}
-    let direction = () => {}
-      if (this.props.formType === 'Sign Up') {
-        direction = () => { return (", Email, and Display Name")};
-        moreInput = () => {
-          return (
-            <div>
+    let moreInput = () => {};
+    let direction = () => {};
+    if (this.props.formType === "Sign Up") {
+      direction = () => {
+        return ", Email, and Display Name";
+      };
+      moreInput = () => {
+        return (
+          <div>
             <input
               className="login-input"
               type="text"
               value={this.state.email}
               placeholder="Email"
-              onChange={this.update('email')}
+              onChange={this.update("email")}
             />
             <input
               className="login-input"
               type="text"
               value={this.state.display_name}
               placeholder="Display Name"
-              onChange={this.update('display_name')}
+              onChange={this.update("display_name")}
             />
-            </div>
-          );
-        };
+          </div>
+        );
       };
+    }
 
     return (
       <div className="login-form-container">
@@ -78,16 +105,18 @@ class SessionForm extends React.Component {
           <br />
           <button className="login-button">{this.props.formType}</button>
         </form>
+        <div className="error-msg">{this.renderErrors()}</div>
         <div className="demo">
-          <p>Try out C-lack as a " 
-          <a className="demo-link" onClick={ () => this.handleDemoUser() }>
-            Demo User"
-          </a>
+          <p>
+            Try out C-lack as a "
+            <a className="demo-link" onClick={() => this.handleDemoUser()}>
+              Demo User"
+            </a>
           </p>
         </div>
       </div>
     );
-    };
-  };
+  }
+};
 
 export default SessionForm;
