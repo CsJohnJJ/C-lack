@@ -15,6 +15,6 @@ class Api::SessionsController < ApplicationController
 
     def destroy
         logout
-        render json: ["Sign in Please"], status: 404
+        render json: ["Log Out Successfully"]
     end
 end
