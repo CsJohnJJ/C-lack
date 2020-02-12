@@ -12,7 +12,7 @@ const Greeting = ({ currentUser, logout }) => {
   const personalGreeting = () => {
     return (
         <nav className="header-group">
-        <h2 className="header-name">{currentUser.display_name} ^ </h2>
+        <h2 className="header-name">{currentUser.display_name} + </h2>
         <button className="header-button" onClick={logout}>
             Log Out
         </button>

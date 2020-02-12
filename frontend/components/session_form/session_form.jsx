@@ -10,6 +10,7 @@ class SessionForm extends React.Component {
       display_name: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDemoUser = this.handleDemoUser.bind(this);
   }
 
   handleSubmit(e) {
@@ -23,7 +24,10 @@ class SessionForm extends React.Component {
     };
   };
 
-  
+  handleDemoUser() {
+    debugger
+       this.props.processForm({ username: "demouser", password: "password" });
+  }
  
   render() {
     let moreInput = () => {}
@@ -54,30 +58,36 @@ class SessionForm extends React.Component {
 
     return (
       <div className="login-form-container">
-          <h2>{ this.props.formType }</h2>
-          <form className="session-form" onSubmit={this.handleSubmit}>
-          <div>Enter Username, Password { direction() }</div>
-              <input 
-                  className="login-input"
-                  type="text"
-                  value={this.state.username}
-                  placeholder="Username"
-                  onChange={this.update('username')}
-              />
-              <input
-                  className="login-input"
-                  type="password"
-                  value={this.state.password}
-                  placeholder="Password"
-                  onChange={this.update('password')}
-              />
-        { moreInput() }
-              <br/>
-              <button className="input session-button">{this.props.formType}</button>
-          </form>
-          <p>Try out C-lack as a Demo User</p>
+        <h2>{this.props.formType}</h2>
+        <form className="session-form" onSubmit={this.handleSubmit}>
+          <div>Enter Username, Password {direction()}</div>
+          <input
+            className="login-input"
+            type="text"
+            value={this.state.username}
+            placeholder="Username"
+            onChange={this.update("username")}
+          />
+          <input
+            className="login-input"
+            type="password"
+            value={this.state.password}
+            placeholder="Password"
+            onChange={this.update("password")}
+          />
+          {moreInput()}
+          <br />
+          <button className="login-button">{this.props.formType}</button>
+        </form>
+        <div className="demo">
+          <p>Try out C-lack as a " 
+          <button className="demo" onClick={ () => this.handleDemoUser() }>
+            Demo User"
+          </button>
+          </p>
+        </div>
       </div>
-      );
+    );
     };
   };
 
