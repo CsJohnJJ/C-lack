@@ -5,7 +5,9 @@ class SessionForm extends React.Component {
     super(props);
     this.state = {
       username: "",
-      password: ""
+      password: "",
+      email: "",
+      display_name: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -17,51 +19,65 @@ class SessionForm extends React.Component {
   }
 
   update(field) {
-    return e =>
-      this.setState({
-        [field]: e.currentTarget.value
-      });
-  }
+    return e => {
+      this.setState({ [field]: e.currentTarget.value });
+    };
+  };
 
+ 
   render() {
+    let moreInput = () => {}
+    let direction = () => {}
+      if (this.props.formType === 'Sign Up') {
+        direction = () => { return (", Email, and Display Name")};
+        moreInput = () => {
+          return (
+            <div>
+            <input
+              className="login-input"
+              type="text"
+              value={this.state.email}
+              placeholder="Email"
+              onChange={this.update('email')}
+            />
+            <input
+              className="login-input"
+              type="text"
+              value={this.state.display_name}
+              placeholder="Display Name"
+              onChange={this.update('display_name')}
+            />
+            </div>
+          );
+        };
+      };
 
     return (
       <div className="login-form-container">
-        <form onSubmit={this.handleSubmit} className="login-form-box">
-          C-lack Login/Signup Page
-          <br />
-          <div className="login-form">
-            <br />
-            <label>
-              Username:
-              <input
-                type="text"
-                value={this.state.username}
-                onChange={this.update("username")}
-                className="login-input"
+          <h2>{ this.props.formType }</h2>
+          <form className="session-form" onSubmit={this.handleSubmit}>
+          <div>Enter Username, Password { direction() }</div>
+              <input 
+                  className="login-input"
+                  type="text"
+                  value={this.state.username}
+                  placeholder="Username"
+                  onChange={this.update('username')}
               />
-            </label>
-            <br />
-            <label>
-              Password:
               <input
-                type="password"
-                value={this.state.password}
-                onChange={this.update("password")}
-                className="login-input"
+                  className="login-input"
+                  type="password"
+                  value={this.state.password}
+                  placeholder="Password"
+                  onChange={this.update('password')}
               />
-            </label>
-            <br />
-            <input
-              className="session-submit"
-              type="submit"
-              value={this.props.formType}
-            />
-          </div>
-        </form>
+        { moreInput() }
+              <br/>
+              <button className="input session-button">{this.props.formType}</button>
+          </form>
       </div>
-    );
-  }
-}
+      );
+    };
+  };
 
 export default SessionForm;

@@ -11,12 +11,12 @@ const Greeting = ({ currentUser, logout }) => {
   );
   const personalGreeting = () => {
     return (
-        <sidenav className="header-group">
+        <nav className="header-group">
         <h2 className="header-name">{currentUser.username} ^</h2>
         <button className="header-button" onClick={logout}>
             Log Out
         </button>
-        </sidenav>
+        </nav>
     )
   };
 
