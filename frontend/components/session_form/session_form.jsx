@@ -85,10 +85,13 @@ class SessionForm extends React.Component {
     }
 
     return (
+      <div className="outer-form-div">
       <div className="login-form-container">
-        <h2>{this.props.formType}</h2>
+        <div className="form-title-all">
+          <h2 className="form-title-name">{this.props.formType}</h2>
+          <div className="form-title-step">Enter Username, Password {direction()}</div>
+        </div>
         <form className="session-form" onSubmit={this.handleSubmit}>
-          <div>Enter Username, Password {direction()}</div>
           <input
             className="login-input"
             type="text"
@@ -110,12 +113,13 @@ class SessionForm extends React.Component {
         <div className="error-msg">{this.renderErrors()}</div>
         <div className="demo">
           <p>
-            Try out C-lack as a "
+            Try out C-lack as a&nbsp;
             <a className="demo-link" onClick={() => this.handleDemoUser()}>
-              Demo User"
+              Demo User
             </a>
           </p>
         </div>
+      </div>
       </div>
     );
   }

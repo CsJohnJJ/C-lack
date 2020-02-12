@@ -1,0 +1,40 @@
+
+.navbar{
+    display: flex;
+    background-color:white;
+    border-bottom: 1px solid lightgray;
+    width: auto;
+    justify-content: space-between;
+    min-height: 70px;
+    align-items: center;
+}
+
+.navbar-link{
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-main-link{
+    margin-left: 8%;
+    font-weight: bolder;
+    font-size: 40px;
+}
+
+.nav-login-link{
+    margin-right: 20px;
+    font-size: 18px;
+}
+
+.nav-login-link:hover{
+    text-decoration: underline;
+    color: #1264a3;
+}
+
+.nav-signup-link{
+    background-color: #611f69;
+    font-size: 18px;
+    border-radius: 4px;
+    padding: 12px 16px;
+    margin-right: 50px;
+    color: white;
+}
