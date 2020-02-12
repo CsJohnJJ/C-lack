@@ -25,7 +25,6 @@ class SessionForm extends React.Component {
   };
 
   handleDemoUser() {
-    debugger
        this.props.processForm({ username: "demouser", password: "password" });
   }
  
@@ -81,9 +80,9 @@ class SessionForm extends React.Component {
         </form>
         <div className="demo">
           <p>Try out C-lack as a " 
-          <button className="demo" onClick={ () => this.handleDemoUser() }>
+          <a className="demo-link" onClick={ () => this.handleDemoUser() }>
             Demo User"
-          </button>
+          </a>
           </p>
         </div>
       </div>
