@@ -7,12 +7,7 @@ import { connect } from "react-redux";
 class Splash extends React.Component {
     constructor(props) {
         super(props);
-        // this.state = {
-        //     username: "",
-        //     password: "",
-        //     email: "",
-        //     display_name: ""
-        // };
+
         this.handleDemoUser = this.handleDemoUser.bind(this);
     }
 

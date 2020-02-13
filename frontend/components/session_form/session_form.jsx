@@ -60,11 +60,7 @@ class SessionForm extends React.Component {
 
   render() {
     let moreInput = () => {};
-    let direction = () => {};
     if (this.props.formType === "Sign Up") {
-      direction = () => {
-        return ", Email, and Display Name";
-      };
       moreInput = () => {
         return (
           <div>
@@ -93,7 +89,6 @@ class SessionForm extends React.Component {
       <div className="login-form-container">
         <div className="form-title-all">
           <h2 className="form-title-name">{this.props.formType}</h2>
-          <div className="form-title-step">Enter Username, Password {direction()}</div>
         </div>
         <form className="session-form" onSubmit={this.handleSubmit}>
           <input
