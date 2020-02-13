@@ -29,9 +29,8 @@
     justify-content: center;
     min-height: 400px;
     border-top: 1px solid lightgray;
-    border-bottom: 1px solid lightgray;
+    // border-bottom: 1px solid lightgray;
 }
-
 
 .login-button{
     background-color: #247a5a;
@@ -62,4 +61,10 @@
 .outer-form-div{
     display: flex;
     justify-content: center;
+    min-height: 820px;
+}
+
+.errors-list{
+    color: red;
+    line-height: 20px;
 }

@@ -88,6 +88,7 @@ class SessionForm extends React.Component {
     }
 
     return (
+      <div className="session-form-div">
       <div className="outer-form-div">
       <div className="login-form-container">
         <div className="form-title-all">
@@ -123,6 +124,18 @@ class SessionForm extends React.Component {
           </p>
         </div>
       </div>
+      </div>
+        <footer className="homepage-4-div">
+          <a href="https://github.com/CsJohnJJ" className="github-link">
+            <img src="https://image.flaticon.com/icons/svg/2111/2111432.svg" className="github-img" />
+            <p className="github-text">Github</p>
+          </a>
+          <p className="contact-me">Contact Me</p>
+
+          <a href="" className="linkedin-link"><img src="https://image.flaticon.com/icons/svg/174/174857.svg" className="linkedin-img" />
+            <p className="linkedin-text">LinkedIn</p>
+          </a>
+        </footer>
       </div>
     );
   }

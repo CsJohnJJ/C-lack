@@ -1,24 +1,6 @@
-# README
+C-lack is a clone based of off Slack.com. <a href="https://c-lack.herokuapp.com">Live Site</a> (working progress)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Credits:
+    Icons in homepage is from flaticon.com
+    Videos in homepage is from youtube.com
+    

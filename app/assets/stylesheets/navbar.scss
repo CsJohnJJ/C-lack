@@ -1,3 +1,6 @@
+.main-div{
+    font-family: sans-serif;
+}
 
 .navbar{
     display: flex;
@@ -16,13 +19,15 @@
 
 .nav-main-link{
     margin-left: 8%;
-    font-weight: bolder;
-    font-size: 40px;
+    font-weight: 900;
+    font-size: 30px;
 }
 
 .nav-login-link{
     margin-right: 20px;
-    font-size: 18px;
+    font-size: 15px;
+    padding: 12px 16px;
+    font-weight: 400;
 }
 
 .nav-login-link:hover{
@@ -32,7 +37,8 @@
 
 .nav-signup-link{
     background-color: #611f69;
-    font-size: 18px;
+    font-size: 14px;
+    font-weight: bold;
     border-radius: 4px;
     padding: 12px 16px;
     margin-right: 50px;

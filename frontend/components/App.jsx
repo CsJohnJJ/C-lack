@@ -5,7 +5,8 @@ import LoginFormContainer from "./session_form/login_form_container";
 import SignupFormContainer from "./session_form/signup_form_container";
 import SplashContainer from "./splash/splash_container"
 import { AuthRoute  } from "../util/route_util";
-import NavbarContainer from "./navbar/navbar_container"
+import NavbarContainer from "./navbar/navbar_container";
+// import ChatContainer from "./channel/ChatRoom"
 
 
 const App = () => (
@@ -18,6 +19,7 @@ const App = () => (
         <AuthRoute path="/login" component={LoginFormContainer} />
         <AuthRoute path="/signup" component={SignupFormContainer} />
         <AuthRoute excat path="/" component={SplashContainer} />
+        {/* <AuthRoute path="/chat" component={ChatContainer} /> */}
     </Switch>
   </div>
 );

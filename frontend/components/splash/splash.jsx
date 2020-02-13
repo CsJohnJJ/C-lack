@@ -1,21 +1,42 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { login, clearErrors, demoLogin } from "../../actions/session_actions";
+import { connect } from "react-redux";
+
 
 class Splash extends React.Component {
     constructor(props) {
         super(props);
+        // this.state = {
+        //     username: "",
+        //     password: "",
+        //     email: "",
+        //     display_name: ""
+        // };
+        this.handleDemoUser = this.handleDemoUser.bind(this);
     }
+
+    componentDidMount(){
+        document.getElementById("rollingball").play()
+    }
+
+
+    handleDemoUser(e) {
+        e.preventDefault();
+        this.props.demoLogin();
+    }
+
 
     render() {
         return (
             <div className="homepage-whole-div">            
                 <div className="homepage-first-div" >  
                     <video
+                        autoPlay
+                        loop
                         src="https://a.slack-edge.com/085e3/marketing/img/homepage/video/brand-campaign_hero-video.mp4" type="video/mp4" 
                         id="rollingball" 
-                        autoplay
-                        loop
-                        // mute
+                        muted
                     />
 
                     <h1 className="homepage-main-text">
@@ -26,7 +47,7 @@ class Splash extends React.Component {
                     </p>
                     <ul className="homepage-link">
                     <Link className="try-c-link" to="/signup">TRY C-LACK</Link>
-                    <Link className="try-demo-link" to="/login">TRY DEMO</Link>
+                    <a className="try-demo-link" onClick={this.handleDemoUser}>TRY DEMO</a>
                     </ul>
                     <p className="already-signup-text">
                     Already using C-lack? <Link className="already-signup" to="/login">Sign In</Link>
@@ -78,19 +99,6 @@ class Splash extends React.Component {
                     </div>
                 </div>
 
-                <div className="homepage-4-div">
-                    <p>Contact Me</p>
-                    <a href="https://github.com/CsJohnJJ"           className="github-link">
-                        <img src="https://image.flaticon.com/icons/svg/2111/2111432.svg" className="github-img"/>
-                        <p className="github-text">Github</p>
-                        </a>
-                    
-                    <a href="" className="linkedin-link"><img src="https://image.flaticon.com/icons/svg/174/174857.svg" className="linkedin-img"/>
-                    <p className="linkedin-text">LinkedIn</p>
-                    </a>
-                </div>
-
-
                 <div className="homepage-5-div">
                     <p className="better-text">Choose a better way to work</p>
                     <ul className="homepage-link">
@@ -98,9 +106,29 @@ class Splash extends React.Component {
                         <Link className="try-demo-link-bottom" to="/login">TRY DEMO</Link>
                     </ul>
                 </div>
+
+                <footer className="homepage-4-div">
+                    <a href="https://github.com/CsJohnJJ"           className="github-link">
+                        <img src="https://image.flaticon.com/icons/svg/2111/2111432.svg" className="github-img"/>
+                        <p className="github-text">Github</p>
+                        </a>
+                    <p className="contact-me">Contact Me</p>
+                    
+                    <a href="" className="linkedin-link"><img src="https://image.flaticon.com/icons/svg/174/174857.svg" className="linkedin-img"/>
+                    <p className="linkedin-text">LinkedIn</p>
+                    </a>
+                </footer>
             </div>
         )
     }
 };
 
-export default Splash;
+// export default Splash;
+
+const mapDispatchToProps = dispatch => {
+    return {
+        processForm: user => dispatch(login(user)), demoLogin: () => dispatch(demoLogin())
+    };
+};
+
+export default connect(null, mapDispatchToProps)(Splash);
