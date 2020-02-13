@@ -4,24 +4,19 @@ import { Link } from 'react-router-dom';
 class Splash extends React.Component {
     constructor(props) {
         super(props);
-        // this.state = {
-        //     username: "",
-        //     password: "",
-        //     email: "",
-        //     display_name: ""
-        // };
-        // this.handleDemoUser = this.handleDemoUser.bind(this);
     }
-
-    // handleDemoUser() {
-    //     let user = { username: "demouser", password: "password" }
-    //     this.props.processForm(user);
-    // }
 
     render() {
         return (
             <div className="homepage-whole-div">            
-                <div className="homepage-first-div">
+                <div className="homepage-first-div" >  
+                    <video
+                        src="https://a.slack-edge.com/085e3/marketing/img/homepage/video/brand-campaign_hero-video.mp4" type="video/mp4" 
+                        id="rollingball" 
+                        autoplay
+                        loop
+                    />
+
                     <h1 className="homepage-main-text">
                     C-lack replaces email inside your company
                     </h1>
@@ -48,7 +43,8 @@ class Splash extends React.Component {
                         allow='autoplay; encrypted-media'
                         allowFullScreen
                         title='slackvideo'
-                    />
+                        className="slackvid"
+                        /> 
                 </div>
 
                 <div className="homepage-3-div">
@@ -82,15 +78,21 @@ class Splash extends React.Component {
                 </div>
 
                 <div className="homepage-4-div">
-                    <a href="https://github.com/CsJohnJJ" className="github-link">Github</a>
-                    <a href="" className="linkedin-link">LinkedIn(no link)</a>
+                    <a href="https://github.com/CsJohnJJ"           className="github-link">
+                        <img src="https://image.flaticon.com/icons/svg/2111/2111432.svg" className="github-img"/>
+                        <p className="github-text">Github</p>
+                        </a>
+                    
+                    <a href="" className="linkedin-link"><img src="https://image.flaticon.com/icons/svg/174/174857.svg" className="linkedin-img"/>
+                    <p className="linkedin-text">LinkedIn</p>
+                    </a>
                 </div>
 
 
                 <div className="homepage-5-div">
                     <p className="better-text">Choose a better way to work</p>
                     <ul className="homepage-link">
-                        <p>Contact Me   </p>
+                        <p>Contact Me</p>
                         <Link className="try-c-link-bottom" to="/signup">TRY C-LACK</Link>
                         <Link className="try-demo-link-bottom" to="/login">TRY DEMO</Link>
                     </ul>

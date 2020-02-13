@@ -25,9 +25,13 @@ class SessionForm extends React.Component {
     };
   }
 
-  handleDemoUser() {
-    let user = { username: "demouser", password: "password" }
-    this.props.processForm(user);
+  componentWillUnmount() {
+    this.props.clearErrors();
+  }
+
+  handleDemoUser(e) {
+    e.preventDefault();
+    this.props.demoLogin();
   }
 
   // handleDemoUser() {
@@ -50,7 +54,6 @@ class SessionForm extends React.Component {
         </ul>
       );
     }
-
     return errors;
   }
 
@@ -114,7 +117,7 @@ class SessionForm extends React.Component {
         <div className="demo">
           <p>
             Try out C-lack as a&nbsp;
-            <a className="demo-link" onClick={() => this.handleDemoUser()}>
+            <a className="demo-link" onClick={ this.handleDemoUser}>
               Demo User
             </a>
           </p>
