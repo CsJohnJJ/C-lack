@@ -15,6 +15,7 @@ class Splash extends React.Component {
                         id="rollingball" 
                         autoplay
                         loop
+                        // mute
                     />
 
                     <h1 className="homepage-main-text">
@@ -78,6 +79,7 @@ class Splash extends React.Component {
                 </div>
 
                 <div className="homepage-4-div">
+                    <p>Contact Me</p>
                     <a href="https://github.com/CsJohnJJ"           className="github-link">
                         <img src="https://image.flaticon.com/icons/svg/2111/2111432.svg" className="github-img"/>
                         <p className="github-text">Github</p>
@@ -92,7 +94,6 @@ class Splash extends React.Component {
                 <div className="homepage-5-div">
                     <p className="better-text">Choose a better way to work</p>
                     <ul className="homepage-link">
-                        <p>Contact Me</p>
                         <Link className="try-c-link-bottom" to="/signup">TRY C-LACK</Link>
                         <Link className="try-demo-link-bottom" to="/login">TRY DEMO</Link>
                     </ul>
