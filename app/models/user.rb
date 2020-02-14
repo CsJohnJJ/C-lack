@@ -20,6 +20,18 @@ class User < ApplicationRecord
     validates :password_digest, presence: true
     validates :password, length: { minimum: 6, allow_nil: true }
 
+    has_many: :channels
+        primary_key: :id
+        foreign_key: :admin_id
+        class: :Channel
+        dependent: :destroy
+
+    has_many: :memberships
+        primary_key: :id
+        foreign_key: :user_id
+        class: :Memberships
+        dependent: :destroy    
+
     after_initialize :ensure_session_token
     attr_reader :password
 

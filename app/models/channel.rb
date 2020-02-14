@@ -12,4 +12,13 @@
 #
 
 class Channel < ApplicationRecord
+    validates :name, :admin_id, :is_private, presence: true
+    validates :name, uniqueness: true
+    validates :is_private, inclusion: { in: [ true, false ] }
+
+    belongs_to: :admin
+        primary_key: :id
+        foreign_key: :admin_id
+        class: :User
+            
 end

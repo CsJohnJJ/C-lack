@@ -8,4 +8,5 @@
 #
 
 class Dm < ApplicationRecord
+    
 end
