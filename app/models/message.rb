@@ -13,4 +13,14 @@
 #
 
 class Message < ApplicationRecord
+    validates :user_id, :body, :messageble_id, :messageble_type, presence: true
+    
+    belongs_to :user,
+        primary_id: :id,
+        foreign_key: :user_id,
+        class_name: :User
+    
+    belongs_to :messageable, 
+        polymorphic: :true
+        
 end

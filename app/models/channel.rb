@@ -21,4 +21,15 @@ class Channel < ApplicationRecord
         foreign_key: :admin_id,
         class_name: :User
 
+    has_many :memberships,
+        as: :memberable,
+        dependent: :destroy 
+
+    has_many :users,
+        through: :memberships
+
+    has_many :messages, 
+        as: :messageable, 
+        dependent: :destroy
+        
 end

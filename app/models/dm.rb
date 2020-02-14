@@ -8,5 +8,15 @@
 #
 
 class Dm < ApplicationRecord
-    
+    has_many :memberships, 
+        as: :memberable, 
+        dependent: :destroy
+
+        has_many :messages, 
+            as: :messageable, 
+            dependent: :destroy
+
+        has_many :users, 
+            through: :memberships
+
 end
