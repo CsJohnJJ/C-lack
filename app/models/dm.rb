@@ -12,11 +12,11 @@ class Dm < ApplicationRecord
         as: :memberable, 
         dependent: :destroy
 
-        has_many :messages, 
-            as: :messageable, 
-            dependent: :destroy
+    has_many :messages, 
+        as: :messageable, 
+        dependent: :destroy
 
-        has_many :users, 
-            through: :memberships
+    has_many :users, 
+        through: :memberships
 
 end

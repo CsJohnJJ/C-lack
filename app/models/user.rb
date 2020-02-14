@@ -20,6 +20,11 @@ class User < ApplicationRecord
     validates :password_digest, presence: true
     validates :password, length: { minimum: 6, allow_nil: true }
 
+    has_many :messages,
+        primary_key: :id,
+        foreign_key: :user_id,
+        class_name: :Message
+
     has_many :channels,
         primary_key: :id,
         foreign_key: :admin_id,
@@ -29,9 +34,19 @@ class User < ApplicationRecord
     has_many :memberships,
         primary_key: :id,
         foreign_key: :user_id,
-        class_name: :Memberships,
-        dependent: :destroy,
-        as: :memberable    
+        class_name: :Membership,
+        dependent: :destroy
+    
+    has_many :dms,
+        through: :memberships,
+        source: :memberable,
+        source_type: 'Dm'
+
+    has_many :channels,
+        through: :memberships,
+        source: :memberable,
+        source_type: 'Channel'    
+        
 
     after_initialize :ensure_session_token
     attr_reader :password

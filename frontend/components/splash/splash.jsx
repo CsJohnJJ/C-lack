@@ -107,7 +107,7 @@ class Splash extends React.Component {
                         <img src="https://image.flaticon.com/icons/svg/2111/2111432.svg" className="github-img"/>
                         <p className="github-text">Github</p>
                         </a>
-                    <p className="contact-me">Contact Me</p>
+                    <a href="mailto:csjohnjj@gmail.com" className="contact-me">Contact Me</a>
                     
                     <a href="" className="linkedin-link"><img src="https://image.flaticon.com/icons/svg/174/174857.svg" className="linkedin-img"/>
                     <p className="linkedin-text">LinkedIn</p>
