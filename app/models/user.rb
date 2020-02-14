@@ -23,13 +23,13 @@ class User < ApplicationRecord
     has_many: :channels
         primary_key: :id
         foreign_key: :admin_id
-        class: :Channel
+        class_name: :Channel
         dependent: :destroy
 
     has_many: :memberships
         primary_key: :id
         foreign_key: :user_id
-        class: :Memberships
+        class_name: :Memberships
         dependent: :destroy    
 
     after_initialize :ensure_session_token

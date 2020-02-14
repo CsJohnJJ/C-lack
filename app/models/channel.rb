@@ -19,6 +19,6 @@ class Channel < ApplicationRecord
     belongs_to: :admin
         primary_key: :id
         foreign_key: :admin_id
-        class: :User
-            
+        class_name: :User
+
 end
