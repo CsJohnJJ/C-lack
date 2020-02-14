@@ -10,19 +10,45 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_13_182759) do
+ActiveRecord::Schema.define(version: 2020_02_14_050721) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "messages", force: :cascade do |t|
+  create_table "channels", force: :cascade do |t|
     t.string "name", null: false
     t.text "description"
     t.integer "admin_id", null: false
     t.boolean "is_private", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["admin_id"], name: "index_messages_on_admin_id"
+    t.index ["admin_id"], name: "index_channels_on_admin_id"
+  end
+
+  create_table "dms", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "memberships", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "memberable_id", null: false
+    t.string "memberable_type", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["memberable_id"], name: "index_memberships_on_memberable_id"
+    t.index ["user_id"], name: "index_memberships_on_user_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.string "body", null: false
+    t.integer "messageble_id"
+    t.string "messageble_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "parent_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

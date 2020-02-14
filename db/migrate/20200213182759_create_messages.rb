@@ -1,14 +1,14 @@
 class CreateMessages < ActiveRecord::Migration[5.2]
   def change
     create_table :messages do |t|
-      t.string :name, null: false
-      t.text :description
-      t.integer :admin_id, null: false
-      t.boolean :is_private, null: false
-
+      t.integer :user_id, null: false
+      t.string :body, null: false
+      t.integer :messageble_id
+      t.string :messageble_type
+      
       t.timestamps
     end
-    add_index :messages, :admin_id
+    add_index :messages, :user_id
   end
 end
 
