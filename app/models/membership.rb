@@ -17,4 +17,5 @@ class Membership < ApplicationRecord
         class: :User
      
             
+            
 end
