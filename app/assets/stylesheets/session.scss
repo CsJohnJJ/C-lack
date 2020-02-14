@@ -1,18 +1,23 @@
 .site-title{
     display: flex;
 }
+.logo-img{
+    max-width: 40px;
+    max-height: 40px;
+}
 
 .login-form-container{
     text-align: center;
     border: 1px solid lightgrey;
     background-color: white;
-    width: 35%;
+    width: 30%;
     height: 50%;
     padding: 6%;
     margin-top: 50px;
     margin-bottom: 70px;
     border-radius: 5px;
     box-shadow: 0 1px 0 rgba(77, 75, 75, 0.25);
+ 
 }
 
 .login-input{

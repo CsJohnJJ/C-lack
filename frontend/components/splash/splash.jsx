@@ -98,7 +98,7 @@ class Splash extends React.Component {
                     <p className="better-text">Choose a better way to work</p>
                     <ul className="homepage-link">
                         <Link className="try-c-link-bottom" to="/signup">TRY C-LACK</Link>
-                        <Link className="try-demo-link-bottom" to="/login">TRY DEMO</Link>
+                        <a className="try-demo-link-bottom" onClick={this.handleDemoUser}>TRY DEMO</a>
                     </ul>
                 </div>
 
