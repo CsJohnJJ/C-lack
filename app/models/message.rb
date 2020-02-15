@@ -20,7 +20,7 @@ class Message < ApplicationRecord
         foreign_key: :user_id,
         class_name: :User
     
-    belongs_to :messageable, 
+    belongs_to :messageble, 
         polymorphic: :true
 
 end

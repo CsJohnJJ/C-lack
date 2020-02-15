@@ -1,29 +1,29 @@
 class Api::ChannelsController < ApplicationController
-    def index
-        @channels = Channel.all
-        render :index
-    end
+    # def index
+    #     @channels = Channel.all
+    #     render :index
+    # end
 
-    def show
-        @channel = Channel.find(params[:id])
-        if @channel
-            render :show
-        else
-            render json: ['Channel does not exist'], status 404
-        end
-    end
+    # def show
+    #     @channel = Channel.find(params[:id])
+    #     if @channel
+    #         render :show
+    #     else
+    #         render json: ['Channel does not exist'], status 404
+    #     end
+    # end
 
-    def create
+    # def create
 
-    end
+    # end
 
-    def destroy
+    # def destroy
 
-    end
+    # end
 
-    private
-    def channel_params
-        params.require(:channel).permit(:name, :description, :is_private)
-    end
+    # private
+    # def channel_params
+    #     params.require(:channel).permit(:name, :description, :is_private)
+    # end
 
 end

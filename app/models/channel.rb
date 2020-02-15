@@ -29,7 +29,7 @@ class Channel < ApplicationRecord
         through: :memberships
 
     has_many :messages, 
-        as: :messageable, 
+        as: :messageble, 
         dependent: :destroy
         
 end

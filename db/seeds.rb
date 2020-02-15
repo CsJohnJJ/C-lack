@@ -33,11 +33,11 @@ ch2 = Channel.create!(name: 'App Academy', description: "Welcome all cohort", ad
 ch3 = Channel.create!(name: 'Random', description: "ercvtybunmid,cduhedfdd34ref", admin_id: demo.id, is_private: 'false')
 ch4 = Channel.create!(name: 'Avengers', description: "Avengers, assemble!!!", admin_id: user10.id, is_private: 'true')
 
-msg1 = Message.create!(body: 'Welcome to C-lack, clone of Slack', user_id: god.id, messageble_id: ch1.id,  messageble_type: Channel)
-msg2 = Message.create!(body: 'I am Iron Man', user_id: user9.id, messageble_id: ch4.id,  messageble_type: Channel )
-msg3 = Message.create!(body: 'Avengers, assemble!', user_id: user10.id, messageble_id: ch4.id,  messageble_type: Channel )
-msg4 = Message.create!(body: 'Testing1', user_id: demo.id, messageble_d:i ch1.id,  messageble_type: Channel )
-msg5 = Message.create!(body: 'datz ez', user_id: user3.id, messageble_id: ch2.id,  messageble_type: Channel )
+msg1 = Message.create!(body: 'Welcome to C-lack, clone of Slack', user_id: god.id, messageble_id: ch1.id,  messageble_type: 'Channel')
+msg2 = Message.create!(body: 'I am Iron Man', user_id: user9.id, messageble_id: ch4.id,  messageble_type: 'Channel' )
+msg3 = Message.create!(body: 'Avengers, assemble!', user_id: user10.id, messageble_id: ch4.id,  messageble_type: 'Channel' )
+msg4 = Message.create!(body: 'Testing1', user_id: demo.id, messageble_id: ch1.id,  messageble_type: 'Channel' )
+msg5 = Message.create!(body: 'datz ez', user_id: user3.id, messageble_id: ch2.id,  messageble_type: 'Channel' )
 
 dm1 = Dm.create!()
 dm2 = Dm.create!()
