@@ -1,1 +1,2 @@
-json.partial! api/channels/channel', channel: @channel
+debugger
+json.partial! 'channel', channel: @channel

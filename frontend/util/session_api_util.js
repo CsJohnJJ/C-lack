@@ -1,31 +1,39 @@
 export const login = user => {
-  return $.ajax({
+  return (
+    $.ajax({
       method: "POST",
       url: "/api/session",
       data: { user }
-    });
-  };
+    })
+  );
+};
 
 export const signup = user => {
-  return $.ajax({
+  return (
+    $.ajax({
       method: "POST",
       url: "/api/users",
       data: { user }
-    });
+    })
+  );
 };
 
 
 export const logout = () => {
-  return $.ajax({
+  return (
+    $.ajax({
       method: "DELETE",
       url: "/api/session"
-    });
+    })
+  )
 };
 
 export const demoLogin = user => {
-  return $.ajax({
-    method: "POST",
-    url: "/api/session",
-    data: { user:{ username: "demouser", password: "password"} }
-  });
+  return (
+    $.ajax({
+      method: "POST",
+      url: "/api/session",
+      data: { user:{ username: "demouser", password: "password"} }
+    })
+  )
 };

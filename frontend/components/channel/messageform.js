@@ -4,6 +4,7 @@ class MessageForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = { body: "" };
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     update(field) {
@@ -13,11 +14,14 @@ class MessageForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        App.cable.subscriptions.subscriptions[0].speak({ message: this.state.body });
+        debugger
+        App.channel.speak({ message: this.state.body });
         this.setState({ body: "" });
     }
+    
 
     render() {
+        // const placeholdertext = `${ this.state.channel }`
         return (
             <div>
                 <form onSubmit={this.handleSubmit.bind(this)}>
@@ -25,7 +29,8 @@ class MessageForm extends React.Component {
                         type="text"
                         value={this.state.body}
                         onChange={this.update("body")}
-                        placeholder="Type message here"
+                        placeholder= "Enter message..."
+                        className="message-box"
                     />
                     <input type="submit" />
                 </form>

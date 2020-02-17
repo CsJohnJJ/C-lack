@@ -4,9 +4,10 @@ import { Route, Switch } from "react-router-dom";
 import LoginFormContainer from "./session_form/login_form_container";
 import SignupFormContainer from "./session_form/signup_form_container";
 import SplashContainer from "./splash/splash_container"
-import { AuthRoute  } from "../util/route_util";
+import { AuthRoute, ProtectedRoute  } from "../util/route_util";
 import NavbarContainer from "./navbar/navbar_container";
 // import ChatContainer from "./channel/ChatRoom"
+import ChannelContainer from "./channel/channel_container";
 
 
 const App = () => (
@@ -18,8 +19,8 @@ const App = () => (
     <Switch>
         <AuthRoute path="/login" component={LoginFormContainer} />
         <AuthRoute path="/signup" component={SignupFormContainer} />
+        <ProtectedRoute path="/channel/:channelId" component={ChannelContainer} />
         <AuthRoute exact path="/" component={SplashContainer} />
-        {/* <AuthRoute path="/chat" component={ChatContainer} /> */}
     </Switch>
   </div>
 );

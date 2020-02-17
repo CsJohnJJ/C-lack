@@ -35,7 +35,6 @@ class SessionForm extends React.Component {
   }
 
   // handleDemoUser() {
-  //   // debugger
   //   let user = { username: "demouser", password: "password" }(
   //     this.props.fromType === "Sign Up"
   //   )
