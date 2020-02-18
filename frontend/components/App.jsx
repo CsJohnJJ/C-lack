@@ -14,13 +14,13 @@ const App = () => (
   <div className="main-div">
     <header>
         <AuthRoute path="/" component= {NavbarContainer} />
-        <Route exact path="/" component= {GreetingContainer} />
+        <Route path="/" component= {GreetingContainer} />
     </header>
     <Switch>
+        <AuthRoute path="/main" component={MainContainer} />
         <AuthRoute path="/login" component={LoginFormContainer} />
-        {/* <ProtectedRoute path="/channels/:channelId" component={ChannelContainer} /> */}
         <AuthRoute path="/signup" component={SignupFormContainer} />
-        <ProtectedRoute path="/main" component={MainContainer} />
+        <ProtectedRoute path="/channels/:channelId" component={ChannelContainer} />
         <AuthRoute exact path="/" component={SplashContainer} />
     </Switch>
   </div>

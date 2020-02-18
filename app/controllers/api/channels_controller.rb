@@ -10,7 +10,7 @@ class Api::ChannelsController < ApplicationController
         if @channel
             render :show
         else
-            render json: ['Channel does not exist'], status 404
+            render json: ['Channel does not exist'], status: 404
         end
     end
 
