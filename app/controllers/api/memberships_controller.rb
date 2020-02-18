@@ -9,7 +9,7 @@ class Api::MembershipsController < ApplicationController
         if @membership
             render :show
         else
-            render json: ['Membership does not exist'], status 404
+            render json: ['Membership does not exist'], status: 404
         end
     end
 

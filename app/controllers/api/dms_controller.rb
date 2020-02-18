@@ -9,7 +9,7 @@ class Api::DmsController < ApplicationController
 #         if @dm
 #             render :show
 #         else
-#             render json: ['Direct message does not exist'], status 404
+#             render json: ['Direct message does not exist'], status: 404
 #         end
 #     end
 
