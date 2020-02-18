@@ -3,7 +3,7 @@ import Message from "./message";
 import { updateMessage } from "../../actions/message_actions";
 
 const mapStateToProps = (state, ownProps) =>{
-    debugger
+    // debugger
     return {
         user: state.entities.users[ownProps.message.user_id]
     };

@@ -6,8 +6,8 @@ import SignupFormContainer from "./session_form/signup_form_container";
 import SplashContainer from "./splash/splash_container"
 import { AuthRoute, ProtectedRoute  } from "../util/route_util";
 import NavbarContainer from "./navbar/navbar_container";
-// import ChatContainer from "./channel/ChatRoom"
-import ChannelContainer from "./channel/channel_container";
+import ChannelContainer from "./channels/channel_container";
+import MainContainer from "./main/main_container";
 
 
 const App = () => (
@@ -18,8 +18,9 @@ const App = () => (
     </header>
     <Switch>
         <AuthRoute path="/login" component={LoginFormContainer} />
+        <ProtectedRoute path="/channels/:channelId" component={ChannelContainer} />
         <AuthRoute path="/signup" component={SignupFormContainer} />
-        <ProtectedRoute path="/channel/:channelId" component={ChannelContainer} />
+        <ProtectedRoute path="/main" component={MainContainer} />
         <AuthRoute exact path="/" component={SplashContainer} />
     </Switch>
   </div>

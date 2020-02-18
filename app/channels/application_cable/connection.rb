@@ -9,7 +9,8 @@ module ApplicationCable
 
     private
     def find_verified_user
-      verified_user = User.find_by(id: cookies.signed[:user_id])
+      # debugger
+      verified_user = User.find_by(session_token: request.session.fetch('session_token', nil))
     end
   end
 end

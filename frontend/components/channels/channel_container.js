@@ -8,13 +8,14 @@ const mapStateToProps = (state, ownProps) => {
     debugger
     return {
         currentUser: state.entities.users[state.session.id],
-        channel: state.entities.channels[ownProps.match.params.channelId],
+        // channel: state.entities.channels[ownProps.match.params.channelId], //update to fetch all the channels
+        
         messages: Object.values(state.entities.messages)
     };
 };
 
 const mapDispatchToProps = () => {
-    // debugger
+    // // debugger
     return {
         fetchChannel: (id) => dispatchEvent(fetchChannel(id)),
         fetchChannelMessages: (channelId) => {

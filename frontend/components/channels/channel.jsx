@@ -1,26 +1,27 @@
 import React from "react";
 import MessageForm from "./messageform";
 import MessageFormContainer from "./messageform_container"
+import Sidebar from "../main/sidebar_container";
+import MessageContainer from "./message_container";
 // import { receiveMessages, receiveMessage } from "../../actions/message_actions";
 
 
 class Channel extends React.Component {
     constructor(props) {
         super(props);
-        // debugger
-        let channelId = parseInt(props.match.params.channelId);
-        // let channelMessages = this.props.fetchChannelMessages(channelId);
+        this.channelId = parseInt(props.match.params.channelId);
+        let channelMessages = this.props.fetchChannelMessages(this.channelId);
         this.getCurrentChannel = this.getCurrentChannel.bind(this);
-        this.loadChat = this.loadChat.bind(this);
+        this.bottom = React.createRef();
     }
 
     getCurrentChannel(channelId) {
         // clear currentChannel if there is already a channel
-        debugger
+        // debugger
         if (App.currentChannel) {
             App.currentChannel.unsubscribe();
         }
-        debugger
+        // debugger
         const { receiveMessage, receiveMessages } = this.props;
         App.currentChannel = App.cable.subscriptions.create(
             { channel: "ChatChannel", id: channelId },
@@ -32,12 +33,13 @@ class Channel extends React.Component {
                             receiveMessage(JSON.parse(data.message)); //passing incoming
                             break;
                         case "messages":
+                            debugger
                             receiveMessages(JSON.parse(data.messages));
                             break;
                 }
             },
                 speak: function (data) {  
-                    debugger 
+                    // debugger 
                     return this.perform("speak", data)},
                 load: function () { return this.perform("load")}
             }
@@ -47,30 +49,40 @@ class Channel extends React.Component {
     componentDidMount() {
         // this.props.fetchChannels(this.props.currentUser.channel.id)
         // const { receiveMessage } = this.props;
-        // debugger
-        const { channel, fetchChannelMessages } = this.props;
-        const channelId = this.props.match.params.channelId;
-        this.getCurrentChannel(channelId);
-        fetchChannelMessages(channelId);
+        // // debugger
+        const { fetchChannelMessages } = this.props;
+        // const channelId = this.props.match.params.channelId;
+        this.getCurrentChannel(this.channelId);
+        debugger
+        fetchChannelMessages(this.channelId);
     };
 
-    loadChat(e) {
-        debugger
-        e.preventDefault();
-        App.cable.subscriptions.subscriptions[2].load();
-    };
 
     render() {
-        // debugger
+        let messageList;
+        const { messages } = this.props;
+        // if (channel && channel.id  == this.props.match.params.channelId) {
+            messageList = messages.map(message => {
+                if (message.messageble_id === this.channelId) {
+                    return <MessageContainer key={message.id} message={message} />
+                }
+            });
+        // }
+        debugger
         return (
             <div>
+                <Sidebar />
+                <div>
+                    <ul>
+                        {messageList}
+                    </ul>
+                    {/* <div ref={this.bottom}></div> */}
+                </div>
                 <h1> Channel Component</h1>
-                {/* <h1>{channels.name}</h1> */}
-                {/* <div> {this.loadChat(e)} </div> */}
-                <MessageFormContainer channel/>
+                <MessageFormContainer />
             </div>
         );
-    };
+    }
 };
 
 export default Channel;

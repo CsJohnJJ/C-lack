@@ -44,3 +44,11 @@ export const updateChannel = (id) => {
         })
     );
 };
+
+export const fetchUserChannels = (userId) => {
+    return $.ajax({
+        method: "GET",
+        url: `api/channels`,
+        data: { userId }
+    });
+};

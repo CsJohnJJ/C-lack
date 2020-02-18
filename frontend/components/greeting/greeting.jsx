@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Channel from "../channel/channel";
+import Channel from "../channels/channel";
 
 const Greeting = ({ currentUser, logout }) => {
   const personalGreeting = () => {

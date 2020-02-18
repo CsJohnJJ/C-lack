@@ -80,3 +80,11 @@ export const createChannel = (channel) => {
         });
     };
 };
+
+export const fetchUserChannels = (userId) => {
+    return (dispatch) => {
+        return ChannelApiUtil.fetchUserChannels(userId).then(channels => {
+            dispatch(receiveChannels(channels));
+        });
+    };
+};
