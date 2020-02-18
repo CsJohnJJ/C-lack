@@ -7,10 +7,9 @@ class ChatChannel < ApplicationCable::Channel
 
   def speak(data)
     debugger
-    
     message = @channel.messages.new(body: data['message'])
-    message.user_id = current_user.id
-
+    # message.user_id = current_user.id  #author of the message
+    
     if message.save!
       socket = { message: message.to_json, type: 'message' }
       ChatChannel.broadcast_to(@channel, socket)
@@ -18,7 +17,7 @@ class ChatChannel < ApplicationCable::Channel
   end
 
   def load
-    debugger
+    # debugger
     messages = @channel.message.all.collect(&:body)
     socket = { messages: messages, type: 'messages' }
     ChatChannel.broadcast_to(@channel, socket)

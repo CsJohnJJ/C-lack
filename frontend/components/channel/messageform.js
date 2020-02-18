@@ -15,16 +15,17 @@ class MessageForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         debugger
-        App.channel.speak({ message: this.state.body });
+        App.currentChannel.speak({ message: this.state.body });
         this.setState({ body: "" });
     }
     
 
     render() {
         // const placeholdertext = `${ this.state.channel }`
+        // debugger
         return (
             <div>
-                <form onSubmit={this.handleSubmit.bind(this)}>
+                <form onSubmit={this.handleSubmit}>
                     <input
                         type="text"
                         value={this.state.body}

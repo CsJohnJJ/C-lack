@@ -1,19 +1,22 @@
 import React from "react";
 import MessageForm from "./messageform";
 import MessageFormContainer from "./messageform_container"
-import { receiveMessages } from "../../actions/message_actions";
+// import { receiveMessages, receiveMessage } from "../../actions/message_actions";
+
 
 class Channel extends React.Component {
     constructor(props) {
         super(props);
-        debugger
+        // debugger
         let channelId = parseInt(props.match.params.channelId);
         // let channelMessages = this.props.fetchChannelMessages(channelId);
         this.getCurrentChannel = this.getCurrentChannel.bind(this);
+        this.loadChat = this.loadChat.bind(this);
     }
 
     getCurrentChannel(channelId) {
         // clear currentChannel if there is already a channel
+        debugger
         if (App.currentChannel) {
             App.currentChannel.unsubscribe();
         }
@@ -25,6 +28,7 @@ class Channel extends React.Component {
                 received: (data) => {
                     switch (data.type) {
                         case "message":
+                            debugger
                             receiveMessage(JSON.parse(data.message)); //passing incoming
                             break;
                         case "messages":
@@ -43,22 +47,27 @@ class Channel extends React.Component {
     componentDidMount() {
         // this.props.fetchChannels(this.props.currentUser.channel.id)
         // const { receiveMessage } = this.props;
-        debugger
-        const { channels, fetchChannelMessages } = this.props;
+        // debugger
+        const { channel, fetchChannelMessages } = this.props;
         const channelId = this.props.match.params.channelId;
         this.getCurrentChannel(channelId);
-        // fetchChannelMessages(channelId);
-    }
+        fetchChannelMessages(channelId);
+    };
 
+    loadChat(e) {
+        debugger
+        e.preventDefault();
+        App.cable.subscriptions.subscriptions[2].load();
+    };
 
     render() {
-        debugger
+        // debugger
         return (
             <div>
-                <h1> Channel Con</h1>
-                {/* <div> {this.getCurrentChannel()} </div> */}
+                <h1> Channel Component</h1>
                 {/* <h1>{channels.name}</h1> */}
-                {/* <MessageForm /> */}
+                {/* <div> {this.loadChat(e)} </div> */}
+                <MessageFormContainer channel/>
             </div>
         );
     };

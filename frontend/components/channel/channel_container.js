@@ -8,20 +8,20 @@ const mapStateToProps = (state, ownProps) => {
     debugger
     return {
         currentUser: state.entities.users[state.session.id],
-        channels: state.entities.channels[ownProps.match.params.channelId],
+        channel: state.entities.channels[ownProps.match.params.channelId],
         messages: Object.values(state.entities.messages)
     };
 };
 
 const mapDispatchToProps = () => {
-    debugger
+    // debugger
     return {
-        // fetchChannels: () => dispatchEvent(fetchChannels()),
+        fetchChannel: (id) => dispatchEvent(fetchChannel(id)),
         fetchChannelMessages: (channelId) => {
             return (dispatch(fetchChannelMessages(channelId)))
         },
-        receiveMessage: (message) => {
-            return (dispatch(receiveMessage(message)))
+        receiveMessage: (id) => {
+            return (dispatch(receiveMessage(id)))
         }
     };
 };
