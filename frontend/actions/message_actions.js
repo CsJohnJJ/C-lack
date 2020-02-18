@@ -29,7 +29,7 @@ export const receiveMessageErrors = (errors) => {
 export const fetchMessages = () => {
     return (dispatch) => {
         return MessageApiUtil.fetchMessages().then((messages) => {
-            dispatch(receiveMessages(messages))
+            return dispatch(receiveMessages(messages))
         });
     };
 };
@@ -37,7 +37,7 @@ export const fetchMessages = () => {
 export const fetchMessage = (id) => {
     return (dispatch) => {
         return MessageApiUtil.fetchMessage(id).then((message) => {
-            dispatch(receiveMessage(message))
+            return dispatch(receiveMessage(message))
         });
     };
 };
@@ -45,7 +45,7 @@ export const fetchMessage = (id) => {
 export const createMessage = (message) => {
     return (dispatch) => {
         return MessageApiUtil.createMessage(message).then((message) => {
-            dispatch(receiveMessage(message))
+            return dispatch(receiveMessage(message))
         });
     };
 };
@@ -53,7 +53,7 @@ export const createMessage = (message) => {
 export const updateMessage = (message) => {
     return (dispatch) => {
         return MessageApiUtil.updateMessage(message).then((message)=> {
-            dispatch(receiveMessage(message))
+            return dispatch(receiveMessage(message))
         });
     };
 };
@@ -69,7 +69,7 @@ export const fetchChannelMessages = (channelId) => {
 export const fetchDmMessages = (dmId) => {
     return (dispatch) => {
         return MessageApiUtil.fetchDmMessages(dmId).then((messages) => {
-            dispatch(receiveMessages(messages))
+            return dispatch(receiveMessages(messages))
         });
     };
 };

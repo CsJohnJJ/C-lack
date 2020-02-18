@@ -4,7 +4,7 @@ import { withRouter } from "react-router-dom";
 // import {  } from "../../actions/message_actions"
 
 const mapStateToProps = (state, ownProps) => {
-    // debugger
+    debugger
     return {
         currentUser: state.session.id, 
         channel: ownProps.channel

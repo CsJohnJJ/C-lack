@@ -44,7 +44,7 @@ const clearChannelErrors = () => {
 export const fetchChannels = () => {
     return (dispatch) => {
         return ChannelApiUtil.fetchChannels().then((channels) => {
-            dispatch(receiveChannels(channels))
+            return dispatch(receiveChannels(channels))
         });
     };
 };
@@ -52,7 +52,7 @@ export const fetchChannels = () => {
 export const fetchChannel = (id) => {
     return (dispatch) => {
         return ChannelApiUtil.fetchChannel(id).then((channel) => {
-            dispatch(receiveChannel(channel));
+            return dispatch(receiveChannel(channel));
         });
     };
 };
@@ -60,7 +60,7 @@ export const fetchChannel = (id) => {
 export const destroyChannel = (id) => {
     return (dispatch) => {
         return ChannelApiUtil.destroyChannel(id).then((channel) => {
-            dispatch(removeChannel(channel));
+            return dispatch(removeChannel(channel));
         });
     };
 };
@@ -68,7 +68,7 @@ export const destroyChannel = (id) => {
 export const updateChannel = (id) => {
     return (dispatch) => {
         return ChannelApiUtil.updateChannel(id).then((channel) => {
-            dispatch(receiveChannel(channel));
+           return dispatch(receiveChannel(channel));
         });
     };
 };
@@ -76,7 +76,7 @@ export const updateChannel = (id) => {
 export const createChannel = (channel) => {
     return (dispatch) => {
         return ChannelApiUtil.createChannel(channel).then((channel) => {
-            dispatch(receiveChannel(channel))
+            return dispatch(receiveChannel(channel))
         });
     };
 };
@@ -84,7 +84,7 @@ export const createChannel = (channel) => {
 export const fetchUserChannels = (userId) => {
     return (dispatch) => {
         return ChannelApiUtil.fetchUserChannels(userId).then(channels => {
-            dispatch(receiveChannels(channels));
+            return dispatch(receiveChannels(channels));
         });
     };
 };
