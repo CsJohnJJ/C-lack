@@ -17,11 +17,11 @@ class Channel extends React.Component {
 
     getCurrentChannel(channelId) {
         // clear currentChannel if there is already a channel
-        // debugger
+        //  
         if (App.currentChannel) {
             App.currentChannel.unsubscribe();
         }
-        // debugger
+        //  
         const { receiveMessage, receiveMessages } = this.props;
         App.currentChannel = App.cable.subscriptions.create(
             { channel: "ChatChannel", id: channelId },
@@ -29,17 +29,17 @@ class Channel extends React.Component {
                 received: (data) => {
                     switch (data.type) {
                         case "message":
-                            // debugger
+                            //  
                             receiveMessage(JSON.parse(data.message)); //passing incoming
                             break;
                         case "messages":
-                            // debugger
+                            //  
                             receiveMessages(JSON.parse(data.messages));
                             break;
                 }
             },
                 speak: function (data) {  
-                    // debugger 
+                    //   
                     return this.perform("speak", data)},
                 load: function () { return this.perform("load")}
             }
@@ -49,11 +49,11 @@ class Channel extends React.Component {
     componentDidMount() {
         // this.props.fetchChannels(this.props.currentUser.channel.id)
         // const { receiveMessage } = this.props;
-        // debugger
+        //  
         const { fetchChannelMessages } = this.props;
         // const channelId = this.props.match.params.channelId;
         this.getCurrentChannel(this.channelId);
-        // debugger
+        //  
         fetchChannelMessages(this.channelId);
     };
 
@@ -68,7 +68,7 @@ class Channel extends React.Component {
                 }
             });
         // }
-        // debugger
+        //  
         return (
             <div>
                 <Sidebar />

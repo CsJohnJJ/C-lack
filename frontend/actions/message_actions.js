@@ -44,7 +44,7 @@ export const fetchMessage = (id) => {
 
 export const createMessage = (message) => {
     return (dispatch) => {
-        // debugger
+        //  
         return MessageApiUtil.createMessage(message).then((message) => {
             return dispatch(receiveMessage(message))
         });
@@ -61,7 +61,7 @@ export const updateMessage = (message) => {
 
 export const fetchChannelMessages = (channelId) => {
     return (dispatch) => {
-        return MessageApiUtil.fetchChannelMessages(channelId).then((messages) => { // debugger
+        return MessageApiUtil.fetchChannelMessages(channelId).then((messages) => { //  
             return dispatch(receiveMessages(messages))    
         });
     };
