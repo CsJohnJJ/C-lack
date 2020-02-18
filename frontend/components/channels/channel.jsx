@@ -29,11 +29,11 @@ class Channel extends React.Component {
                 received: (data) => {
                     switch (data.type) {
                         case "message":
-                            debugger
+                            // debugger
                             receiveMessage(JSON.parse(data.message)); //passing incoming
                             break;
                         case "messages":
-                            debugger
+                            // debugger
                             receiveMessages(JSON.parse(data.messages));
                             break;
                 }
@@ -49,11 +49,11 @@ class Channel extends React.Component {
     componentDidMount() {
         // this.props.fetchChannels(this.props.currentUser.channel.id)
         // const { receiveMessage } = this.props;
-        // // debugger
+        // debugger
         const { fetchChannelMessages } = this.props;
         // const channelId = this.props.match.params.channelId;
         this.getCurrentChannel(this.channelId);
-        debugger
+        // debugger
         fetchChannelMessages(this.channelId);
     };
 
@@ -68,7 +68,7 @@ class Channel extends React.Component {
                 }
             });
         // }
-        debugger
+        // debugger
         return (
             <div>
                 <Sidebar />
