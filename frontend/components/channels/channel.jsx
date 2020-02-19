@@ -21,7 +21,7 @@ class Channel extends React.Component {
         if (App.currentChannel) {
             App.currentChannel.unsubscribe();
         }
-        //  
+        debugger
         const { receiveMessage, receiveMessages } = this.props;
         App.currentChannel = App.cable.subscriptions.create(
             { channel: "ChatChannel", id: channelId },
@@ -29,7 +29,7 @@ class Channel extends React.Component {
                 received: (data) => {
                     switch (data.type) {
                         case "message":
-                            //  
+                            //  debugger
                             receiveMessage(JSON.parse(data.message)); //passing incoming
                             break;
                         case "messages":
@@ -39,7 +39,7 @@ class Channel extends React.Component {
                 }
             },
                 speak: function (data) {  
-                    //   
+                    //   debugger
                     return this.perform("speak", data)},
                 load: function () { return this.perform("load")}
             }
@@ -67,20 +67,18 @@ class Channel extends React.Component {
                     return <MessageContainer key={message.id} message={message} />
                 }
             });
-        // }
-        //  
+            // }
+            
+            debugger
         return (
+          <div>
             <div>
-                <Sidebar />
-                <div>
-                    <ul>
-                        {messageList}
-                    </ul>
-                    {/* <div ref={this.bottom}></div> */}
-                </div>
-                <h1> Channel Component</h1>
-                <MessageFormContainer />
+              <ul>{messageList}</ul>
+              {/* <div ref={this.bottom}></div> */}
             </div>
+            <h1> -------------------------- </h1>
+            <MessageFormContainer />
+          </div>
         );
     }
 };

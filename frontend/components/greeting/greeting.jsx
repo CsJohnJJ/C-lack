@@ -1,18 +1,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Channel from "../channels/channel";
+import ChannelContainer from "../channels/channel_container";
+import MainContainer from "../main/main_container";
 
 const Greeting = ({ currentUser, logout }) => {
   const personalGreeting = () => {
+    debugger
     return (
       <div>
-        <nav className="header-group">
+        {/* <nav className="header-group">
         <h2 className="header-name">{currentUser.display_name} + </h2>
         <button className="header-button" onClick={logout}>
             Log Out
         </button>
-        </nav>
-        {/* <Channel /> */}
+        </nav> */}
+        {/* <ChannelContainer /> */}
+        <MainContainer />
       </div>
     )
   };

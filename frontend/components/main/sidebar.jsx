@@ -8,6 +8,7 @@ class SideBar extends React.Component {
     }
 
     render() {
+        debugger
         return (
             <div>
                 <h1>
@@ -16,7 +17,7 @@ class SideBar extends React.Component {
                     </Link>
                 </h1>
                 <h3>
-                    {this.props.user.username}
+                    {this.props.user.display_name}
                 </h3>
                 <button onClick={this.props.logout}>Log out</button>
                 <ChannelIndex />

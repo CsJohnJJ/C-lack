@@ -13,8 +13,7 @@ const mapStateToProps = (state, ownProps) => {
     };
 };
 
-const mapDispatchToProps = () => {
-    // //  
+const mapDispatchToProps = (dispatch) => {
     return {
         fetchChannel: (id) => dispatchEvent(fetchChannel(id)),
         fetchChannelMessages: (channelId) => {

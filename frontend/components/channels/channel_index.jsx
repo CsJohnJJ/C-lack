@@ -6,6 +6,7 @@ class ChannelIndex extends React.Component {
 
     constructor(props) {
         super(props);
+        debugger
     }
 
     componentDidMount() {
@@ -13,15 +14,17 @@ class ChannelIndex extends React.Component {
     }
 
     render() {
-        const channelList = Object.values(this.props.channels).map(ch => {
+        let channels = this.props.fetchUserChannels(this.props.currentUser.id);
+        const channelList = Object.values(channels).map(channel => {
+            debugger
             return (
                 <ChannelIndexItem
-                    key={[ch.id, ch.id]}
-                    channel={ch}
+                    key={channel.id}
+                    channel={channel}
                 />
             )
         })
-
+        debugger
         return (
             <div>
                 <div>
