@@ -33,6 +33,7 @@
     background-color:#f8f8f8;
     justify-content: center;
     min-height: 400px;
+    height: 100%;
     border-top: 1px solid lightgray;
     // border-bottom: 1px solid lightgray;
 }
@@ -72,4 +73,8 @@
 .errors-list{
     color: red;
     line-height: 20px;
+}
+
+.greeting-div{
+    height: 100%;
 }

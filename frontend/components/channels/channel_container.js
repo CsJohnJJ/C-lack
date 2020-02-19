@@ -5,7 +5,7 @@ import { fetchChannels, fetchChannel, createChannel, destroyChannel }from "../..
 import { withRouter } from "react-router-dom";
 
 const mapStateToProps = (state, ownProps) => {
-    debugger
+    //  
     return {
         currentUser: state.entities.users[state.session.id],
         // channel: state.entities.channels[ownProps.match.params.channelId], //update to fetch all the channel
@@ -20,7 +20,7 @@ const mapDispatchToProps = (dispatch) => {
             return (dispatch(fetchChannelMessages(channelId)))
         },
         receiveMessage: (message) => {
-            debugger
+            //  
             return (dispatch(receiveMessage(message)))
         }
     };

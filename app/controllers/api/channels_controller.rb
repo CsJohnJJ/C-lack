@@ -1,12 +1,12 @@
 class Api::ChannelsController < ApplicationController
     def index
-        # debugger
+        #  
         @channels = Channel.all.includes(:messages, :users)
         render :index
     end
 
     def show
-        #  debugger
+        #   
         @channel = Channel.find(params[:id]).includes(:messages)
         if @channel
             render :show

@@ -6,7 +6,7 @@ import ChannelContainer from '../channels/channel_container';
 // class Main extends React.Component {
 
 //     render () {
-//         debugger
+//          
 //         return (
 //           <div>
 //             <Switch>
@@ -21,7 +21,7 @@ import ChannelContainer from '../channels/channel_container';
 
 const Main = (props) => {
     return (
-      <div>
+      <div className="mainjsx-div">
         <Route path={["/", "/main", "/main/channels/:channelId"]}
             component={Sidebar} />
         <Switch>

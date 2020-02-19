@@ -5,9 +5,9 @@ import MainContainer from "../main/main_container";
 
 const Greeting = ({ currentUser, logout }) => {
   const personalGreeting = () => {
-    debugger
+    //  
     return (
-      <div>
+      <div className="greeting-div">
         {/* <nav className="header-group">
         <h2 className="header-name">{currentUser.display_name} + </h2>
         <button className="header-button" onClick={logout}>

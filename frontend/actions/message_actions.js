@@ -12,7 +12,7 @@ export const receiveMessages = (messages) => {
 };
 
 export const receiveMessage = (message) => {
-    debugger
+     
     return {
         type: RECEIVE_MESSAGE,
         message

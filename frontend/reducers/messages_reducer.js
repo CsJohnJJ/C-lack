@@ -8,7 +8,7 @@ export default (state = {}, action) => {
             //  
             return merge({}, action.messages);
         case RECEIVE_MESSAGE:
-            // debugger
+            //  
             return merge({}, state, {[action.message.id] :action.message});
         default:
             return state;

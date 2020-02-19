@@ -16,7 +16,7 @@ class ChannelIndex extends React.Component {
         // //THIS IS CAUSING A INFINITE LOOP
         // let channels = this.props.fetchUserChannels(this.props.currentUser.id);
         // const channelList = Object.values(channels).map(channel => {
-        //     debugger
+        //      
         //     return (
         //         <ChannelIndexItem
         //             key={channel.id}
@@ -25,7 +25,7 @@ class ChannelIndex extends React.Component {
         //     )
         // })
         // //END HERES
-        // debugger
+        //  
         return (
             <div>
                 <div>

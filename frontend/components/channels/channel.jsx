@@ -21,7 +21,7 @@ class Channel extends React.Component {
         if (App.currentChannel) {
             App.currentChannel.unsubscribe();
         }
-        // debugger
+        //  
         const { receiveMessage, receiveMessages } = this.props;
         App.currentChannel = App.cable.subscriptions.create(
             { channel: "ChatChannel", id: channelId },
@@ -29,17 +29,17 @@ class Channel extends React.Component {
                 received: (data) => {
                     switch (data.type) {
                         case "message":
-                            debugger
+                            //  
                             receiveMessage(JSON.parse(data.message)); //passing incoming
                             break;
                         case "messages":
-                             debugger
+                            //   
                             receiveMessages(JSON.parse(data.messages));
                             break;
                 }
             },
                 speak: function (data) {  
-                    //   debugger
+                    //    
                     return this.perform("speak", data)},
                 load: function () { return this.perform("load")}
             }
@@ -64,21 +64,20 @@ class Channel extends React.Component {
             
             // // theres no messageble_id when message is created
             messageList = messages.map(message => {
-                // debugger
+                //  
                 if (message.messageble_id === this.channelId) {
                     return <MessageContainer key={message.id} message={message} />
                 }
             });
             // }
             
-            // debugger
+            //  
         return (
-          <div>
-            <div>
-              <ul>{messageList}</ul>
+          <div className="channel-div">
+            <div className="messageandform-div">
+              <ul className="whole-messagelist">{messageList}</ul>
               {/* <div ref={this.bottom}></div> */}
             </div>
-            <h1> -------------------------- </h1>
             <MessageFormContainer />
           </div>
         );

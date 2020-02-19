@@ -8,18 +8,18 @@ class SideBar extends React.Component {
     }
 
     render() {
-        // debugger
+        //  
         return (
-            <div>
+            <div className="sidebar-div">
                 <h1>
-                    <Link to="/">
+                    <Link to="/" className="home-link">
                         C-lack
                     </Link>
                 </h1>
-                <h3>
+                <h3 className="displayname">
                     {this.props.user.display_name}
                 </h3>
-                <button onClick={this.props.logout}>Log out</button>
+                <button onClick={this.props.logout} className="logout-burron">Log out</button>
                 <ChannelIndex />
             </div>
         );
