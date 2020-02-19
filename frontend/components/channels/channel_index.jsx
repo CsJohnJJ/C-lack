@@ -18,11 +18,11 @@ class ChannelIndex extends React.Component {
         // let channels = this.props.fetchUserChannels(this.props.currentUser.id);
         let channels = []
         let channelList;
-        // debugger
+        //  
         if (this.props.channels){
             channels = this.props.channels
             channelList = Object.values(channels).map(channel => {
-                 debugger
+                  
                 return (
                     <ChannelIndexItem
                         key={channel.id}
