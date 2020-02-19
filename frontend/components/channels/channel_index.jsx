@@ -2,6 +2,7 @@ import React from 'react';
 import ChannelIndexItem from './channel_index_item';
 import { Link } from 'react-router-dom';
 
+
 class ChannelIndex extends React.Component {
 
     constructor(props) {
@@ -15,15 +16,21 @@ class ChannelIndex extends React.Component {
     render() {
         // //THIS IS CAUSING A INFINITE LOOP
         // let channels = this.props.fetchUserChannels(this.props.currentUser.id);
-        // const channelList = Object.values(channels).map(channel => {
-        //      
-        //     return (
-        //         <ChannelIndexItem
-        //             key={channel.id}
-        //             channel={channel}
-        //         />
-        //     )
-        // })
+        let channels = []
+        let channelList;
+        // debugger
+        if (this.props.channels){
+            channels = this.props.channels
+            channelList = Object.values(channels).map(channel => {
+                 debugger
+                return (
+                    <ChannelIndexItem
+                        key={channel.id}
+                        channel={channel}
+                    />
+                )
+            })
+        }
         // //END HERES
         //  
         return (
@@ -31,9 +38,9 @@ class ChannelIndex extends React.Component {
                 <div>
                     <h3>Channels</h3>
                 </div>
-                {/* <ul>
+                <ul>
                     {channelList}
-                </ul> */}
+                </ul>
             </div>
         );
     };

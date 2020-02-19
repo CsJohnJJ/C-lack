@@ -1,5 +1,5 @@
 import { RECEIVE_ALL_CHANNELS, RECEIVE_CHANNEL, REMOVE_CHANNEL } from "../actions/channel_actions";
-import merge from "lodash";
+import merge from "lodash/merge";
 
 export default (state = {}, action) => {
     Object.freeze(state);
