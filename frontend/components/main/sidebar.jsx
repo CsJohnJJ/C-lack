@@ -19,7 +19,7 @@ class SideBar extends React.Component {
                 <h3 className="displayname">
                     {this.props.user.display_name}
                 </h3>
-                <button onClick={this.props.logout} className="logout-burron">Log out</button>
+                <button onClick={this.props.logout} className="logout-button">Log out</button>
                 <ChannelIndex />
             </div>
         );
