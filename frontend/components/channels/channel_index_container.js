@@ -3,7 +3,7 @@ import ChannelIndex from './channel_index';
 import { fetchUserChannels } from '../../actions/channel_actions';
 
 const mapStateToProps = (state, ownProps) => {
-    debugger
+    // debugger
     return {
         currentUser: state.entities.users[state.session.id],
         channels: state.entities.channels

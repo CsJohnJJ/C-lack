@@ -8,7 +8,8 @@ class ChatChannel < ApplicationCable::Channel
   def speak(data)
     message = @channel.messages.new(body: data['message'])
     message.user_id = current_user.id  #author of the message
-       debugger
+    message.messageble_id = @channel.id
+      #  debugger
     if message.save!
       socket = { message: message.to_json, type: 'message' }
       #  debugger

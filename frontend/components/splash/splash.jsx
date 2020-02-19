@@ -18,7 +18,9 @@ class Splash extends React.Component {
 
     handleDemoUser(e) {
         e.preventDefault();
-        this.props.demoLogin();
+        this.props.demoLogin().then(() => {
+            return this.props.history.push("/main/channels/1")
+        })
     }
 
 

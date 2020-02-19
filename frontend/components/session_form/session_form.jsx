@@ -31,16 +31,10 @@ class SessionForm extends React.Component {
 
   handleDemoUser(e) {
     e.preventDefault();
-    this.props.demoLogin();
+    this.props.demoLogin().then(() => {
+      return this.props.history.push("/main/channels/1")
+    })
   }
-
-  // handleDemoUser() {
-  //   let user = { username: "demouser", password: "password" }(
-  //     this.props.fromType === "Sign Up"
-  //   )
-  //     ? this.props.demologin(user)
-  //     : this.props.processForm(user);
-  // }
 
   renderErrors() {
     let errors = null;

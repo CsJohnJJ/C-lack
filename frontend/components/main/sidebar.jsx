@@ -8,7 +8,7 @@ class SideBar extends React.Component {
     }
 
     render() {
-        debugger
+        // debugger
         return (
             <div>
                 <h1>

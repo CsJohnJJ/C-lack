@@ -13,14 +13,14 @@ import MainContainer from "./main/main_container";
 const App = () => (
   <div className="main-div">
     <header>
-        <AuthRoute path="/" component= {NavbarContainer} />
-        <Route path="/" component= {GreetingContainer} />
+      <Route exact path={['/', '/login', '/signup']} component= {NavbarContainer} />
     </header>
     <Switch>
-        <AuthRoute exact path="/" component={SplashContainer} />
+        <Route path="/main/channels/:channelId" component= {GreetingContainer} />
         <AuthRoute path="/login" component={LoginFormContainer} />
         <AuthRoute path="/signup" component={SignupFormContainer} />
-        {/* <ProtectedRoute path="/channels/:channelId" component={ChannelContainer} /> */}
+        <Route exact path="/" component={SplashContainer} />
+        <ProtectedRoute exact path={["/main", "/main/channels/:channelId"]} component={ChannelContainer} />
     </Switch>
   </div>
 );

@@ -8,7 +8,7 @@ class Message extends React.Component {
 
     render () {
         const { message, user } = this.props;
-         
+         debugger
         return (
             <div>
                 <p></p>

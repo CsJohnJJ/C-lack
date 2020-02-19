@@ -3,7 +3,7 @@ import Sidebar from './sidebar';
 import { logout } from '../../actions/session_actions';
 
 const mapStateToProps= (state) => {
-    debugger
+    // debugger
     return {
         user: state.entities.users[state.session.id]
     }
