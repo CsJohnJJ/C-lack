@@ -88,5 +88,5 @@ html, body, main{
 
 #root{
     min-height: 100vh;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
