@@ -36,11 +36,27 @@ class ChannelIndex extends React.Component {
         return (
             <div>
                 <div>
-                    <h3>Channels</h3>
+                    <h3 className="channel-title">Channels</h3>
                 </div>
-                <ul>
+                <ul className="channelname-ul">
                     {channelList}
                 </ul>
+
+                <div>
+                    <h3 className="channel-title">Direct Messages</h3>
+                </div>
+                <ul className="dmname-ul">
+                    <li className="dm-placeholder">
+                        @ C-lackbot
+                    </li>
+                    <li className="dm-placeholder">
+                        @ John Doe
+                    </li>
+                    <li className="dm-placeholder">
+                        @ Greg, the TA
+                    </li>
+                </ul>
+
             </div>
         );
     };

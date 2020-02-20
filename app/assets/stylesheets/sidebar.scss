@@ -2,8 +2,10 @@
 .sidebar-div{
     background-color: #3f0e40;
     color: white;
-    width: 200px;
+    width: 260px;
     height: 100%;
+    // padding-left: 10px;
+    padding-top: 15px;
 }
 
 .mainjsx-div{
@@ -15,7 +17,43 @@
     border: 1px solid black;
     border-radius: 4px;
 }
+.home-link{
+    font-size: 30px;
+    font-weight: 900;
+    padding-left: 10px;
+}
 
-// .logout-button{
+.displayname{
+    margin-top: 0;
+    font-size: 12px;
+    padding-top: 2px;
+    
+}
 
-// }
+.online-name{
+    display: flex;
+    height: 20px;
+    padding-left: 10px;
+   
+}
+
+.online-img{
+    width: 15px;
+    height: 15px;
+    padding-right: 5px;
+}
+
+.sidebar-toplink:hover{
+    background: #350D36;
+}
+.logout-button{
+    padding-left: 10px;
+}
+
+
+
+
+.dm-placeholder{
+    padding-left: 10px;
+    margin-bottom: 7px;
+}

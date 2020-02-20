@@ -24,7 +24,7 @@ class MessageForm extends React.Component {
 
     render() {
         return (
-            <div outer-messageform-div>
+            <div className="outer-messageform-div">
                 <form onSubmit={this.handleSubmit.bind(this)} className="messageform">
                     <input
                         type="text"

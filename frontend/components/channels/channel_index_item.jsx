@@ -5,8 +5,8 @@ const ChannelIndexItem = (props) => {
      
     return (
         <Link to={`/main/channels/${props.channel.id}`}>
-            <li>
-                <span>#</span>
+            <li className="channelname-li">
+                <span># </span>
                 {props.channel.name}
             </li>
         </Link>

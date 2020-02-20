@@ -8,10 +8,10 @@ class Message extends React.Component {
 
     render () {
         const { message, user } = this.props;
-          
+        // const displayName = user.display_name
         return (
             <div className="message-div">
-                {/* <p>{user}</p> */}
+                {/* <p>{user.display_name}</p> */}
                 <p className="message-text">{message.body}</p>
             </div>
         )
