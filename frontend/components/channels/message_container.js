@@ -5,10 +5,8 @@ import { fetchUser, fetchUsers } from "../../actions/user_action";
 import { withRouter } from "react-router-dom";
 
 const mapStateToProps = (state, ownProps) =>{
-    // debugger
     return {
         user: state.entities.users[ownProps.message.user_id],
-        // author: state.entities.users[ownProps.message.author_id]
 
     };
 };

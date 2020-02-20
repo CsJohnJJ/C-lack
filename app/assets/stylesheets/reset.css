@@ -85,3 +85,8 @@ input[type="submit"] {
 html, body, main{
   height: 100%;
 }
+
+#root{
+    min-height: 100vh;
+    overflow: hidden;
+}

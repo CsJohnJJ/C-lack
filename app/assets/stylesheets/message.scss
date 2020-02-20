@@ -4,13 +4,14 @@
 
 .messageandform-div{
     overflow: auto;
+    height: 87%;
 }
 
 .message-author{
     font-weight: 800;
     display: flex;
     align-items: baseline;
-    margin-bottom: 10px;
+    // margin-bottom: 10px;
 }
 
 .message-date{
@@ -19,7 +20,7 @@
 }
 .message-div{
     margin: 10px;
-
+    display: flex;
 }
 
 .who-div{
@@ -30,3 +31,19 @@
     color: lightblue;
     font-size: 35px;
 }   
+
+.message-div:hover{
+    background-color: #E5E1DC;
+}
+
+.messageinfo-div{
+    display: block;
+    padding-left: 10px;
+}
+.message-text{
+    font-size: 16px;
+}
+.author-time{
+    display: flex;
+    align-items: baseline;
+}

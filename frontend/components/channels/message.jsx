@@ -9,7 +9,6 @@ class Message extends React.Component {
     }
 
     componentDidUpdate(prevProps) {
-        debugger
         if (prevProps.match.params.channelId !== this.props.match.params.channelId){
             this.props.fetchChannelMessages(this.props.match.params.channelId);
             window.location.reload();
@@ -27,10 +26,13 @@ class Message extends React.Component {
             <div className="who-div">
               <FaUser />
             </div>
-
-            <p className="message-author">{displayName}</p>
-            <p className="message-date">{createdAt}</p>
-            <p className="message-text">{message.body}</p>
+            <div className="messageinfo-div">
+              <div className="author-time">
+                <p className="message-author">{displayName}</p>
+                <p className="message-date">{createdAt}</p>
+              </div>
+              <p className="message-text">{message.body}</p>
+            </div>
             <div ref={this.bottom}></div>
           </div>
         );

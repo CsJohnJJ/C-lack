@@ -59,8 +59,13 @@ class Channel extends React.Component {
 
     render() {
         let messageList;
-        const { messages } = this.props;
-        // if (channel && channel.id  == this.props.match.params.channelId) {
+        let channelName;
+        let channelMembers;
+        const { messages, channel } = this.props;
+        if (channel) {
+            channelName = channel.name;
+            channelMembers = channel.users.length;
+        }
             
             messageList = messages.map(message => {
                 //  
@@ -69,10 +74,20 @@ class Channel extends React.Component {
                 }
             });
             // }
-            
-            //  
         return (
           <div className="channel-div">
+              <div className="outer-info">
+                <div className="topinfo-nav">
+                    <p className="channelName-p"> # {channelName}</p>
+                    <p className="amount-p">
+                        <img
+                        src="https://image.flaticon.com/icons/svg/615/615075.svg"
+                        className="amount-img"
+                        />
+                        {channelMembers}
+                    </p>
+                </div>
+            </div>
             <div className="messageandform-div">
               <ul className="whole-messagelist">{messageList}</ul>
               {/* <div ref={this.bottom}></div> */}
