@@ -46,14 +46,39 @@
 .sidebar-toplink:hover{
     background: #350D36;
 }
+
 .logout-button{
     padding-left: 10px;
+    // display: none;
 }
 
 
+.channel-title, .channelname-li, .whole-placeholder{
+    color: #cfc3cf;
+}
 
+// .channelname-li{
+//     color: #cfc3cf;
+// }
+
+// .whole-placeholder{
+//     color: #cfc3cf;
+// }
 
 .dm-placeholder{
     padding-left: 10px;
     margin-bottom: 7px;
+}
+
+.searchBox{
+    border: 1px solid #5b325d;
+    background-color: #5b325d;
+    border-radius: 4px;
+    margin-left: 10px;
+    margin-right: 10px;
+    max-width: 190px;
+    margin-top: 10px;
+    height: 25px;
+    padding-left: 10px;
+    color:#cfc3cf;
 }

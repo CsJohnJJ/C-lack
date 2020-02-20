@@ -13,9 +13,9 @@ class ChannelIndex extends React.Component {
         this.props.fetchUserChannels(this.props.currentUser.id)
     }
 
+    
+
     render() {
-        // //THIS IS CAUSING A INFINITE LOOP
-        // let channels = this.props.fetchUserChannels(this.props.currentUser.id);
         let channels = []
         let channelList;
         //  
@@ -31,8 +31,7 @@ class ChannelIndex extends React.Component {
                 )
             })
         }
-        // //END HERES
-        //  
+   
         return (
             <div>
                 <div>
@@ -41,21 +40,22 @@ class ChannelIndex extends React.Component {
                 <ul className="channelname-ul">
                     {channelList}
                 </ul>
-
-                <div>
-                    <h3 className="channel-title">Direct Messages</h3>
+                <div className="whole-placeholder">
+                    <div >
+                        <h3 className="channel-title">Direct Messages</h3>
+                    </div>
+                    <ul className="dmname-ul">
+                        <li className="dm-placeholder">
+                            @ C-lackbot
+                        </li>
+                        <li className="dm-placeholder">
+                            @ John Doe
+                        </li>
+                        <li className="dm-placeholder">
+                            @ Greg, the TA
+                        </li>
+                    </ul>
                 </div>
-                <ul className="dmname-ul">
-                    <li className="dm-placeholder">
-                        @ C-lackbot
-                    </li>
-                    <li className="dm-placeholder">
-                        @ John Doe
-                    </li>
-                    <li className="dm-placeholder">
-                        @ Greg, the TA
-                    </li>
-                </ul>
 
             </div>
         );

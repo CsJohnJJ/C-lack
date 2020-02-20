@@ -1,7 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import ChannelContainer from "../channels/channel_container";
 import MainContainer from "../main/main_container";
+
 
 const Greeting = ({ currentUser, logout }) => {
   const personalGreeting = () => {
@@ -20,7 +21,7 @@ const Greeting = ({ currentUser, logout }) => {
     )
   };
 
-  return currentUser ? personalGreeting() : null;
+  return currentUser ? personalGreeting() : <Redirect to="/" />;
 };
 
 export default Greeting;

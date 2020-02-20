@@ -26,6 +26,17 @@ class SideBar extends React.Component {
                     </div>
                 </div>
                 <button onClick={this.props.logout} className="logout-button">Log out</button>
+
+                <form  className="searchPlaceholder">
+                    <input
+                        type="text"
+                        // value=""
+                        // onChange={this.update("body")}
+                        placeholder= "Jump to..."
+                        className="searchBox"
+                    />
+                </form>
+               
                 <ChannelIndex />
             </div>
         );

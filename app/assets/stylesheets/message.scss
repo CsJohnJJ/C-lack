@@ -1,3 +1,32 @@
 .message-date{
     font-size: 10px;
 }
+
+.messageandform-div{
+    overflow: auto;
+}
+
+.message-author{
+    font-weight: 800;
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 10px;
+}
+
+.message-date{
+    font-weight: normal;
+    padding-left: 10px;
+}
+.message-div{
+    margin: 10px;
+
+}
+
+.who-div{
+    display: flex;
+}
+
+.who-div > svg{
+    color: lightblue;
+    font-size: 35px;
+}   

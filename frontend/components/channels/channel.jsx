@@ -62,7 +62,6 @@ class Channel extends React.Component {
         const { messages } = this.props;
         // if (channel && channel.id  == this.props.match.params.channelId) {
             
-            // // theres no messageble_id when message is created
             messageList = messages.map(message => {
                 //  
                 if (message.messageble_id === this.channelId) {
