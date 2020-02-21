@@ -19,6 +19,14 @@ Impelmented Technologies:
 - React
 - Redux
 
+Live Chat:
+
+<img src="https://user-images.githubusercontent.com/50147749/75049129-a8fa6b00-5497-11ea-87f5-43c92bc8fd71.png" width=500  align=center>
+
+Channels:
+
+<img src="https://user-images.githubusercontent.com/50147749/75048819-25407e80-5497-11ea-9ad9-343f62e16d45.png" height=400 align=center>
+
 Credits:
     
 - Icons in homepage is from flaticon.com
