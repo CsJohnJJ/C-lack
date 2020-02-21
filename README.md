@@ -21,7 +21,10 @@
 <img src="https://user-images.githubusercontent.com/50147749/75049129-a8fa6b00-5497-11ea-87f5-43c92bc8fd71.png" width=500  align=center>
 </p>
 
-Channels:
+
+### Channels:
+
+User is able to join/leave different channels and view the messages within that channel
 
 <p align="center">
 <img src="https://user-images.githubusercontent.com/50147749/75048819-25407e80-5497-11ea-9ad9-343f62e16d45.png" height=400 align=center>
