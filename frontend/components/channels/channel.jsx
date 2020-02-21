@@ -3,6 +3,7 @@ import MessageForm from "./messageform";
 import MessageFormContainer from "./messageform_container"
 import Sidebar from "../main/sidebar_container";
 import MessageContainer from "./message_container";
+import { FaRegStar, FaUsers } from "react-icons/fa";
 // import { receiveMessages, receiveMessage } from "../../actions/message_actions";
 
 
@@ -78,14 +79,18 @@ class Channel extends React.Component {
           <div className="channel-div">
               <div className="outer-info">
                 <div className="topinfo-nav">
-                    <p className="channelName-p"> # {channelName}</p>
-                    <p className="amount-p">
-                        <img
+                    <p className="channelName-p"> #{channelName}</p>
+                    <div className="amount-p">
+                        {/* <img
                         src="https://image.flaticon.com/icons/svg/615/615075.svg"
                         className="amount-img"
-                        />
+                        /> */}
+                        <div className="length-img">
+                            <FaUsers />
+                        </div>
                         {channelMembers}
-                    </p>
+
+                    </div>
                 </div>
             </div>
             <div className="messageandform-div">
