@@ -49,6 +49,19 @@
     width: 20px;
     height: 20px;
 }
-.length-img:hover{
-    color: yellow;
+.amount-p:hover{
+    color: rgba(var(--sk_highlight,18,100,163),1);
+}
+
+.star-amount{
+    display: flex;
+    margin-top: 5px;
+}
+.star-img:hover{
+    color:  rgba(var(--sk_secondary_highlight,242,199,68),1);
+}
+
+.the-line{
+    color: lightgray;
+    margin-left: 10px;
 }

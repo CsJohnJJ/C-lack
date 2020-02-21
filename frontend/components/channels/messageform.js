@@ -16,26 +16,31 @@ class MessageForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        //  
         App.currentChannel.speak({ message: this.state.body });
         this.setState({ body: "" });
     }
     
 
     render() {
+        let name;
+        this.props.channel ? name = this.props.channel.name : null
+        
         return (
-            <div className="outer-messageform-div">
-                <form onSubmit={this.handleSubmit.bind(this)} className="messageform">
-                    <input
-                        type="text"
-                        value={this.state.body}
-                        onChange={this.update("body")}
-                        placeholder= "Enter Message..."
-                        className="message-box"
-                    />
-                    <input type="submit" className="messageform-submit"/>
-                </form>
-            </div>
+          <div className="outer-messageform-div">
+            <form
+              onSubmit={this.handleSubmit.bind(this)}
+              className="messageform"
+            >
+              <input
+                type="text"
+                value={this.state.body}
+                onChange={this.update("body")}
+                placeholder={`Message #${name}`}
+                className="message-box"
+              />
+              <input type="submit" className="messageform-submit" />
+            </form>
+          </div>
         );
     }
 }

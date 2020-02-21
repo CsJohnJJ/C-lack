@@ -80,15 +80,21 @@ class Channel extends React.Component {
               <div className="outer-info">
                 <div className="topinfo-nav">
                     <p className="channelName-p"> #{channelName}</p>
-                    <div className="amount-p">
-                        {/* <img
-                        src="https://image.flaticon.com/icons/svg/615/615075.svg"
-                        className="amount-img"
-                        /> */}
-                        <div className="length-img">
-                            <FaUsers />
+                    <div className="star-amount">
+                        <div className="star-img">
+                            <FaRegStar /> 
                         </div>
+                        <span className="the-line">|</span>
+                        <div className="amount-p">
+                            {/* <img
+                            src="https://image.flaticon.com/icons/svg/615/615075.svg"
+                            className="amount-img"
+                            /> */}
+                            <div className="length-img">
+                                <FaUsers />
+                            </div>
                         {channelMembers}
+                        </div>
 
                     </div>
                 </div>
@@ -97,7 +103,7 @@ class Channel extends React.Component {
               <ul className="whole-messagelist">{messageList}</ul>
               {/* <div ref={this.bottom}></div> */}
             </div>
-            <MessageFormContainer />
+            <MessageFormContainer channel={this.props.channel}/>
           </div>
         );
     }
