@@ -7,7 +7,9 @@
 <img src="https://user-images.githubusercontent.com/50147749/75047593-06d98380-5495-11ea-9297-8710fcbe9363.png" width=500 >
 </p>    
 
-###### Schema diagram : https://dbdiagram.io/d/5e46ed4f9e76504e0ef1772a
+<p align="center" >
+Schema diagram : https://dbdiagram.io/d/5e46ed4f9e76504e0ef1772a
+</p>
 
 Impelmented Technologies:
 
