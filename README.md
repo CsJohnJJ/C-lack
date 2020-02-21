@@ -29,6 +29,8 @@ Channels:
 
 Credits:
     
-- Icons in homepage is from flaticon.com
-- Videos in homepage is from youtube.com
+- Icons in chat - react-icons.netlify.com   
+- Icons - flaticon.com
+- Slack rolling balls video - slack.com
+- Slack CEO video - youtube.com
     
