@@ -30,7 +30,7 @@ User is able to join/leave different channels and view the messages within that 
 <img src="https://user-images.githubusercontent.com/50147749/75048819-25407e80-5497-11ea-9ad9-343f62e16d45.png" height=400 align=center>
 </p>
 
-Schema Diagream
+Schema Diagram
 
 <p align="center">
 <img src="https://user-images.githubusercontent.com/50147749/75047593-06d98380-5495-11ea-9297-8710fcbe9363.png" width=500 >
