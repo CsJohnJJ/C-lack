@@ -60,16 +60,16 @@ class SessionForm extends React.Component {
             <input
               className="login-input"
               type="text"
-              value={this.state.email}
-              placeholder="Email"
-              onChange={this.update("email")}
+              value={this.state.display_name}
+              placeholder="Display Name"
+              onChange={this.update("display_name")}
             />
             <input
               className="login-input"
               type="text"
-              value={this.state.display_name}
-              placeholder="Display Name"
-              onChange={this.update("display_name")}
+              value={this.state.email}
+              placeholder="Email"
+              onChange={this.update("email")}
             />
           </div>
         );
@@ -78,50 +78,66 @@ class SessionForm extends React.Component {
 
     return (
       <div className="session-form-div">
-      <div className="outer-form-div">
-      <div className="login-form-container">
-        <div className="form-title-all">
-          <h2 className="form-title-name">{this.props.formType}</h2>
+        <div className="outer-form-div">
+          <div className="login-form-container">
+            <div className="form-title-all">
+              <h2 className="form-title-name">{this.props.formType}</h2>
+            </div>
+            <form className="session-form" onSubmit={this.handleSubmit}>
+              <input
+                className="login-input"
+                type="text"
+                value={this.state.username}
+                placeholder="Username"
+                onChange={this.update("username")}
+              />
+                {moreInput()}
+              <input
+                className="login-input"
+                type="password"
+                value={this.state.password}
+                placeholder="Password"
+                onChange={this.update("password")}
+              />
+              <br />
+              <button className="login-button">{this.props.formType}</button>
+            </form>
+            <div className="error-msg">{this.renderErrors()}</div>
+            <div className="demo">
+              <p>
+                Try out C-lack as a&nbsp;
+                <a className="demo-link" onClick={this.handleDemoUser}>
+                  Demo User
+                </a>
+              </p>
+            </div>
+          </div>
         </div>
-        <form className="session-form" onSubmit={this.handleSubmit}>
-          <input
-            className="login-input"
-            type="text"
-            value={this.state.username}
-            placeholder="Username"
-            onChange={this.update("username")}
-          />
-          <input
-            className="login-input"
-            type="password"
-            value={this.state.password}
-            placeholder="Password"
-            onChange={this.update("password")}
-          />
-          {moreInput()}
-          <br />
-          <button className="login-button">{this.props.formType}</button>
-        </form>
-        <div className="error-msg">{this.renderErrors()}</div>
-        <div className="demo">
-          <p>
-            Try out C-lack as a&nbsp;
-            <a className="demo-link" onClick={ this.handleDemoUser}>
-              Demo User
-            </a>
-          </p>
-        </div>
-      </div>
-      </div>
         <footer className="homepage-4-div">
-          <a href="https://github.com/CsJohnJJ" className="github-link">
-            <img src="https://image.flaticon.com/icons/svg/2111/2111432.svg" className="github-img" />
-            <p className="github-text">Github</p>
+          <a
+            href="https://github.com/CsJohnJJ"
+            className="github-link"
+            target="_blank"
+          >
+            <img
+              src="https://image.flaticon.com/icons/svg/2111/2111432.svg"
+              className="github-img"
+            />
           </a>
-          <p className="contact-me">Contact Me</p>
 
-          <a href="" className="linkedin-link"><img src="https://image.flaticon.com/icons/svg/174/174857.svg" className="linkedin-img" />
-            <p className="linkedin-text">LinkedIn</p>
+          <a href="https://jianjiang.me" className="portfolio" target="_blank">
+            About Me
+          </a>
+
+          <a
+            href="http://www.linkedin.com/in/john-jiangjj"
+            className="linkedin-link"
+            target="_blank"
+          >
+            <img
+              src="https://image.flaticon.com/icons/svg/174/174857.svg"
+              className="linkedin-img"
+            />
           </a>
         </footer>
       </div>
