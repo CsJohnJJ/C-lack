@@ -190,31 +190,37 @@ a:hover{
     border: 1px solid white;
 }
 
-.github-img, .github-text{
+.homepage-footer{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.github-img, .linkedin-img{
     width: 30px;
     height: 30px;
-    padding-right: 100px;
+    cursor: pointer;
+    // padding-right: 100px;
 }
-.linkedin-img, .linkedin-text{
+.linkedin-img{
      width: 30px;
     height: 30px;
-    padding-left: 100px;
+    // padding-left: 100px;
 }
 
-.github-text, .linkedin-text{
-    display: flex;
-    justify-content: center;
+.github-link:hover, .linkedin-link:hover{
+    background-color: #1264a3;
+    cursor: pointer;
 }
 
-.github-text:hover, .linkedin-text:hover{
-    color: #1264a3;
-    text-decoration: underline;
+.portfolio:hover{
+    cursor: pointer;
+    color: #611f69;
 }
 
-.contact-me{
+.portfolio{
     font-size: 20px;
     font-weight: bold;
-    margin-bottom: 2rem;
+    margin: 2rem;
 }
 
 .try-c-link-bottom:hover{
@@ -224,4 +230,12 @@ a:hover{
 
 .try-demo-link-bottom:hover{
     box-shadow: inset 0 0 0 2px #fff;
+}
+
+a:hover{
+    cursor: pointer;
+}
+
+.features-div{
+    margin: 1rem ;
 }
