@@ -8,7 +8,6 @@ class Navbar extends React.Component{
     }
 
     render() {
-        debugger
         let sessionLi;
          if (this.props.currentUser){
             sessionLi = (
