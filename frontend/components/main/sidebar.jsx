@@ -9,9 +9,8 @@ class SideBar extends React.Component {
     }
    
     render() {
-        //  
         return (
-            <div className="sidebar-div">
+            <div className="sidebar-div" id="loggedIn">
                 <div className="sidebar-toplink">
                     <h1>
                         <Link to="/" className="home-link">

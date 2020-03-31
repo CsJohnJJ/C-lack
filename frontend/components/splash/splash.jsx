@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { login, clearErrors, demoLogin } from "../../actions/session_actions";
 import { connect } from "react-redux";
 // import { portfolio } from "../../../app/assets/images/aboutmelogo1.png";
@@ -25,6 +25,9 @@ class Splash extends React.Component {
 
 
     render() {
+        if(this.props.currentUser){
+            return this.props.history.push("/main/channels/1");
+        }else{
         return (
           <div className="homepage-whole-div">
             <div className="homepage-first-div">
@@ -160,6 +163,7 @@ class Splash extends React.Component {
             </footer>
           </div>
         );
+    }
     }
 };
 
