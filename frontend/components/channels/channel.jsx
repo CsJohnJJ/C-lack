@@ -57,6 +57,12 @@ class Channel extends React.Component {
         fetchChannelMessages(this.channelId);
     };
 
+    componentDidUpdate(prevProps){
+        if (this.bottom.current){
+            this.bottom.current.scrollIntoView();
+        }
+    }
+
 
     render() {
         let messageList;
@@ -101,7 +107,7 @@ class Channel extends React.Component {
             </div>
             <div className="messageandform-div">
               <ul className="whole-messagelist">{messageList}</ul>
-              {/* <div ref={this.bottom}></div> */}
+              <div ref={this.bottom}></div>
             </div>
             <MessageFormContainer channel={this.props.channel}/>
           </div>
