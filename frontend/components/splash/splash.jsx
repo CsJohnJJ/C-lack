@@ -25,9 +25,9 @@ class Splash extends React.Component {
 
 
     render() {
-        if(this.props.currentUser){
-            return this.props.history.push("/main/channels/1");
-        }else{
+        // if(this.props.currentUser){
+        //     return this.props.history.push("/main/channels/1");
+        // }else{
         return (
           <div className="homepage-whole-div">
             <div className="homepage-first-div">
@@ -164,7 +164,7 @@ class Splash extends React.Component {
           </div>
         );
     }
-    }
+    // }
 };
 
 // export default Splash;
