@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 
 
 class ChannelIndex extends React.Component {
-
     constructor(props) {
         super(props);
     }
@@ -18,11 +17,10 @@ class ChannelIndex extends React.Component {
     render() {
         let channels = []
         let channelList;
-        //  
+
         if (this.props.channels){
             channels = this.props.channels
-            channelList = Object.values(channels).map(channel => {
-                  
+            channelList = Object.values(channels).map(channel => {       
                 return (
                     <ChannelIndexItem
                         key={channel.id}
@@ -33,6 +31,7 @@ class ChannelIndex extends React.Component {
         }
    
         return (
+
             <div>
                 <div>
                     <h3 className="channel-title">Channels</h3>

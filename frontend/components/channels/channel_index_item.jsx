@@ -1,15 +1,30 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const ChannelIndexItem = (props) => {
+class ChannelIndexItem extends React.Component {
+      constructor(props) {
+        super(props);
+        this.toggleSelect = this.toggleSelect.bind(this);
+    }
+
+    toggleSelect(){
+        let selected = document.getElementById(this.props.channel.name)
+        if (selected.idList){
+            selected.idList.toggle("selected")
+        }
+    }
+
+    render(){
+        debugger
     return (
-        <Link to={`/main/channels/${props.channel.id}`}>
-            <li className="channelname-li">
+        <Link to={`/main/channels/${this.props.channel.id}`}  onClick={this.toggleSelect}>
+            <li className="channelname-li" id={this.props.channel.name}>
                 <span># </span>
-                {props.channel.name}
+                {this.props.channel.name}
             </li>
         </Link>
     );
+    }
 };
 
 export default ChannelIndexItem;

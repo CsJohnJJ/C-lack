@@ -15,6 +15,12 @@
 - React
 - Redux
 
+### Overview:
+
+<p align="center">
+<img src="app/assets/images/C-lack.gif" width=500  align=center>
+</p>
+
 ### Live Chat:
 
 <p align="center">
