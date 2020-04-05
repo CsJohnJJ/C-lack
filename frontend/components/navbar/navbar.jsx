@@ -11,11 +11,21 @@ class Navbar extends React.Component{
         let sessionLi;
          if (this.props.currentUser){
             sessionLi = (
-              <li>
-                <Link onClick={this.props.logout} className="nav-signup-link">
-                  Log out
-                </Link>
-              </li>
+              <>
+                <li className="back-chat">
+                  <Link className="nav-login-link" to="/main/channels/1">
+                    Back to Chat
+                  </Link>
+                </li>
+                <li>
+                  <button
+                    onClick={this.props.logout}
+                    className="nav-signup-link"
+                  >
+                    Log out
+                  </button>
+                </li>
+              </>
             );
          }else{
             sessionLi = 

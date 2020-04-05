@@ -20,7 +20,7 @@ class ChannelIndex extends React.Component {
 
         if (this.props.channels){
             channels = this.props.channels
-            channelList = Object.values(channels).map(channel => {       
+            channelList = Object.values(channels).map(channel => {    
                 return (
                     <ChannelIndexItem
                         key={channel.id}
