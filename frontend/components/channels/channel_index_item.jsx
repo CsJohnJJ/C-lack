@@ -15,15 +15,14 @@ class ChannelIndexItem extends React.Component {
     }
 
     render(){
-        debugger
-    return (
-        <Link to={`/main/channels/${this.props.channel.id}`}  onClick={this.toggleSelect}>
-            <li className="channelname-li" id={this.props.channel.name}>
-                <span># </span>
-                {this.props.channel.name}
-            </li>
-        </Link>
-    );
+        return (
+            <Link to={`/main/channels/${this.props.channel.id}`}  onClick={this.toggleSelect}>
+                <li className="channelname-li" id={this.props.channel.name}>
+                    <span># </span>
+                    {this.props.channel.name}
+                </li>
+            </Link>
+        );
     }
 };
 
