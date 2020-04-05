@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import { login, clearErrors, demoLogin } from "../../actions/session_actions";
 import { connect } from "react-redux";
-// import { portfolio } from "../../../app/assets/images/aboutmelogo1.png";
+// import clackGif from "./C-lack.gif";
 
 
 class Splash extends React.Component {
@@ -77,6 +77,7 @@ class Splash extends React.Component {
                 title="slackvideo"
                 className="slackvid"
               />
+              {/* <img src={clackGif}></img> */}
             </div>
 
             <div className="homepage-3-div">
