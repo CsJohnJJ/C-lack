@@ -10,10 +10,15 @@
 .channelname-li{
     padding: 5px 0px;
     padding-left: 10px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .channelname-li:hover{
     background: #350D36;
+}
+.channelname-li:hover .channel-delete{
+    display: flex;
 }
 
 .channel-title{
@@ -68,4 +73,13 @@
 
 #selected{
     background-color: #350D36;
+}
+
+.channel-delete{
+    display: none;
+    margin-right: 15px;
+}
+
+.channel-delete:hover{
+    text-shadow: 0 0 3px white;
 }
