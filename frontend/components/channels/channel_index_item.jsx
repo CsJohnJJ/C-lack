@@ -20,18 +20,28 @@ class ChannelIndexItem extends React.Component {
     }
 
     render(){
-        // WORKING ON DELETE CHANNEL. check currentuser === channel.adminid
-        return (
-            <>
-            <Link to={`/main/channels/${this.props.channel.id}`}  onClick={this.toggleSelect}>
-                <li className="channelname-li" id={this.props.channel.name}>
-                    <span># </span>
-                    {this.props.channel.name}
-                </li>
-            </Link>
+        let canDelete = () => {};
+        if (this.props.currentUser.id === this.props.channel.admin_id) {
+            canDelete = () => { 
+                return (
+                <button onClick={this.deleteChannel()} className="channel-delete">x</button> 
+                );
+            };
+        };
 
+          return (
+            <>
+              <Link
+                to={`/main/channels/${this.props.channel.id}`}
+                onClick={this.toggleSelect}
+              >
+                <li className="channelname-li" id={this.props.channel.name}>
+                  # {this.props.channel.name}
+                {canDelete()}
+                </li>
+              </Link>
             </>
-        );
+          );
     }
 };
 
