@@ -25,6 +25,7 @@ class ChannelIndex extends React.Component {
                     <ChannelIndexItem
                         key={channel.id}
                         channel={channel}
+                        currentUser = {this.props.currentUser}
                     />
                 )
             })
