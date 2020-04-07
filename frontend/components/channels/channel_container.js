@@ -20,9 +20,9 @@ const mapDispatchToProps = (dispatch) => {
             return (dispatch(fetchChannelMessages(channelId)))
         },
         receiveMessage: (message) => {
-            //  
             return (dispatch(receiveMessage(message)))
-        }
+        },
+        destroyChannel: (id) => dispatch(destroyChannel(id))
     };
 };
 
