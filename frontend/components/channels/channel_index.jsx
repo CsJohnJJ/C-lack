@@ -17,7 +17,7 @@ class ChannelIndex extends React.Component {
     render() {
         let channels = []
         let channelList;
-
+// debugger
         if (this.props.channels){
             channels = this.props.channels
             channelList = Object.values(channels).map(channel => {    
@@ -26,6 +26,7 @@ class ChannelIndex extends React.Component {
                         key={channel.id}
                         channel={channel}
                         currentUser = {this.props.currentUser}
+                        deleteChannel = {this.props.destroyChannel}
                     />
                 )
             })

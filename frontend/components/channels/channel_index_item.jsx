@@ -1,22 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { withRouter } from "react-router-dom";
 
 class ChannelIndexItem extends React.Component {
       constructor(props) {
         super(props);
         this.toggleSelect = this.toggleSelect.bind(this);
         this.prevId
+        this.deleteChannel = this.deleteChannel.bind(this)
     }
 
     toggleSelect(){
-        this.prevId = this.props.channel.name;
         let selected = document.getElementById(this.props.channel.name)
         selected.setAttribute("id", "selected");
         
     }
 
     deleteChannel(channelId) {
-        // this.props.destroyChannel(this.props.channel.id).then(()=> this.props.history.push("/main/channels/1"))
+        debugger
+        this.props.deleteChannel(this.props.channel.id).then(()=> this.props.history.push("/main/channels/1"))
         console.log(channelId)
     }
 
@@ -30,7 +32,6 @@ class ChannelIndexItem extends React.Component {
                 );
             };
         };
-debugger
           return (
             <>
               <Link
@@ -47,4 +48,4 @@ debugger
     }
 };
 
-export default ChannelIndexItem;
+export default withRouter(ChannelIndexItem);
