@@ -8,14 +8,14 @@ const mapStateToProps = (state, ownProps) => {
             name: "",
             description: "",
             is_private: false
-        }
+        },
         formType: "Create"
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
-        action: (channel) => dispatch(createChannel(channel))
+        createChannel: (channel) => dispatch(createChannel(channel))
     }
 }
 
