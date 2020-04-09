@@ -22,7 +22,7 @@ class Message extends React.Component {
 
         let createdAt = (new Date(message.created_at)).toLocaleTimeString()
 
-        debugger
+        
         return (
           <div className="message-div">
             <div className={"who-div user" + (message.user_id) }>
