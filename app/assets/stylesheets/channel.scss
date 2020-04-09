@@ -17,6 +17,12 @@
 .channelname-li:hover{
     background: #350D36;
 }
+
+.channelli-outer{
+    display: flex;
+    justify-content: space-between;
+}
+
 .channelli-outer:hover .channel-delete{
     display: flex;
 }

@@ -4,33 +4,32 @@ import { withRouter } from "react-router-dom";
 
 class ChannelIndexItem extends React.Component {
       constructor(props) {
+
         super(props);
         this.toggleSelect = this.toggleSelect.bind(this);
         this.prevId
-        this.deleteChannel = this.deleteChannel.bind(this)
+        this.removeChannel = this.removeChannel.bind(this)
     }
 
     toggleSelect(){
         let selected = document.getElementById(this.props.channel.name)
-        selected.setAttribute("id", "selected");
-        
+        selected.setAttribute("id", "selected");      
     }
 
-    deleteChannel(channelId) {
-      // channelId.preventDefault();
-
-        // this.props.deleteChannel(this.props.channel.id).then(()=> this.props.history.push("/main/channels/1"))
+    removeChannel(e) {
+      e.preventDefault();
+        this.props.deleteChannel(this.props.channel.id).then(()=> this.props.history.push("/main/channels/1"))
     }
 
     render(){
-        let canDelete;
+        let canDelete = () => {};
         let channelId = this.props.channel.id
         if (this.props.currentUser.id === this.props.channel.admin_id) {
-            canDelete =  
-                
-                <button onClick={this.deleteChannel(channelId)} className="channel-delete">x</button> 
-  
-  
+            canDelete = () => {
+              return (    
+                <button onClick={this.removeChannel} className="channel-delete">x</button>
+              );
+            };
         };
           return (
             <div className="channelli-outer">
@@ -42,7 +41,7 @@ class ChannelIndexItem extends React.Component {
                   # {this.props.channel.name}
                 </li>
               </Link>
-                {canDelete}
+                {canDelete()}
             </div>
           );
     }
