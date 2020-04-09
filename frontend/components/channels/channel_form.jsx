@@ -21,13 +21,12 @@ class ChannelForm extends React.Component {
     this.props
       .createChannel(this.state)
       .then(() =>
-        this.props.history.push(`/main/channels/${this.props.channel.id}`)
+        this.props.history.push(`/main/channels/1`)
       );
   }
 
   cancelCreate(e){
       e.preventDefault();
-
       this.props.history.push(`/main/channels/1`);
   }
 
