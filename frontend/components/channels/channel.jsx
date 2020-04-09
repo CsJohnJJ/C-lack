@@ -17,12 +17,9 @@ class Channel extends React.Component {
   }
 
   getCurrentChannel(channelId) {
-    // clear currentChannel if there is already a channel
-    //
     if (App.currentChannel) {
       App.currentChannel.unsubscribe();
     }
-    //
     const { receiveMessage, receiveMessages } = this.props;
     App.currentChannel = App.cable.subscriptions.create(
       { channel: "ChatChannel", id: channelId },
@@ -30,17 +27,14 @@ class Channel extends React.Component {
         received: data => {
           switch (data.type) {
             case "message":
-              //
               receiveMessage(JSON.parse(data.message)); //passing incoming
               break;
             case "messages":
-              //
               receiveMessages(JSON.parse(data.messages));
               break;
           }
         },
         speak: function(data) {
-          //
           return this.perform("speak", data);
         },
         load: function() {
