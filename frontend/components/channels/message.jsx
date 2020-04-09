@@ -19,11 +19,13 @@ class Message extends React.Component {
         const { message, user, fetchUsers, fetchUser} = this.props;
         // const authorName = fetchUser(message.user_id)
         const displayName = ((user && user.display_name) ? user.display_name : message.display_name);
-    ;
+
         let createdAt = (new Date(message.created_at)).toLocaleTimeString()
+
+        debugger
         return (
           <div className="message-div">
-            <div className="who-div">
+            <div className={"who-div user" + (message.user_id) }>
               <FaUser />
             </div>
             <div className="messageinfo-div">
