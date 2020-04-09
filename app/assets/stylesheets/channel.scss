@@ -17,7 +17,7 @@
 .channelname-li:hover{
     background: #350D36;
 }
-.channelname-li:hover .channel-delete{
+.channelli-outer:hover .channel-delete{
     display: flex;
 }
 
@@ -82,4 +82,16 @@
 
 .channel-delete:hover{
     text-shadow: 0 0 3px white;
+}
+
+.title-create{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+.create-button{
+    margin-right: 15px;
+    width: 13px;
+    color: white;
 }
