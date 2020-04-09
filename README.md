@@ -1,7 +1,7 @@
 
 ## C-Lack
-#### C-lack is a clone based of off Slack.com. It is essentially a chat room, designed to replace email. Users can join/leave/create/delete workspaces, channel, as well as direct messages.
-<a href="https://c-lack.herokuapp.com">Live Site</a> (Working progress)
+C-lack is a clone based of off Slack.com. It is essentially a chat room, designed to replace email.
+<a href="https://c-lack.herokuapp.com">Live Site</a> 
 
 ### Impelmented Technologies:
 
