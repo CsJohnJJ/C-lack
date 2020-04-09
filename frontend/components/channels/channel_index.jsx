@@ -41,7 +41,7 @@ class ChannelIndex extends React.Component {
               <Link className="create-link" to="/main/channels/create">
                 <img
                   className="create-button"
-                  src="https://www.iconsdb.com/icons/preview/white/plus-xxl.png"
+                  src="https://ya-webdesign.com/images600_/png-white-plus-sign-6.png"
                 />
               </Link>
             </div>
