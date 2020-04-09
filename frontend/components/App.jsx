@@ -8,19 +8,33 @@ import { AuthRoute, ProtectedRoute  } from "../util/route_util";
 import NavbarContainer from "./navbar/navbar_container";
 import ChannelContainer from "./channels/channel_container";
 import MainContainer from "./main/main_container";
+import CreateChannelFormContainer from "./channels/create_channel_form_container";
 
 
 const App = () => (
   <div className="main-div">
     <header>
-      <Route exact path={['/', '/login', '/signup']} component= {NavbarContainer} />
+      <Route
+        exact
+        path={["/", "/login", "/signup"]}
+        component={NavbarContainer}
+      />
     </header>
     <Switch>
-        <Route path="/main/channels/:channelId" component= {GreetingContainer} />
-        <AuthRoute path="/login" component={LoginFormContainer} />
-        <AuthRoute path="/signup" component={SignupFormContainer} />
-        <Route exact path="/" component={SplashContainer} />
-        <ProtectedRoute exact path={["/main", "/main/channels/:channelId"]} component={ChannelContainer} />
+      <ProtectedRoute
+      excat
+        path="/main/channels/create"
+        component={CreateChannelFormContainer}
+      />
+      <Route path="/main/channels/:channelId" component={GreetingContainer} />
+      <AuthRoute path="/login" component={LoginFormContainer} />
+      <AuthRoute path="/signup" component={SignupFormContainer} />
+      <Route exact path="/" component={SplashContainer} />
+      <ProtectedRoute
+        exact
+        path={["/main", "/main/channels/:channelId"]}
+        component={ChannelContainer}
+      />
     </Switch>
   </div>
 );

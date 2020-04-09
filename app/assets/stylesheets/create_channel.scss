@@ -1,0 +1,142 @@
+.channel-create-form{
+    // display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  
+//   background: rgba(0, 0, 0, 0.6);
+  z-index: 2;
+  cursor: default;
+  animation: fadeIn 0.3s;
+}
+
+.channel-form {
+    position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+}
+
+.channel-create-form{
+    // display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+//   background: rgba(0, 0, 0, 0.6);
+  z-index: 2;
+  cursor: default;
+  animation: fadeIn 0.3s;
+}
+
+.channel-form {
+    position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+}
+
+.x-button-container{
+    display: flex;
+    flex-direction: column;
+    align-content: flex-end;
+}
+
+.x-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 50px;
+    margin: 0px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 30px;
+}
+
+.create-esc{
+    font-size: 8px;
+}
+
+.x-button:hover{
+    border-radius: 50px;
+    background-color: lightgray;
+}
+
+.create-input {
+    border: 1px solid black;
+    border-radius: .3em;
+    height: 2em;
+    margin: 1em;
+    width: 90%;
+}
+
+.form-button{
+    display: inline-block;
+    padding: 0.35em 1.2em;
+    border: 0.1em solid transparent;
+    margin: 0.3em;
+    border-radius: 0.3em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    text-align:center;
+    transition: all 0.2s;
+    background-color: lightgray;
+    font-weight: bolder;
+}
+
+.form-button:hover{
+    background-color: green;
+    color: white;
+}
+
+.create-bottom{
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.input-info{
+    margin-left: 1em;
+    font-weight: bold;
+}
+
+.create-title{
+    font-size: 3rem;
+    margin: .5em 0 .5em 16px;
+    font-weight: bolder;
+}
+
+.create-detail-info{
+    margin-left:16px;
+}
+
+.optional{
+    color: gray;
+    font-weight: normal;
+}
+
+.private-input{
+    display: flex;
+    align-items: center;
+}
+
+.isPrivate{
+    margin-left: 2px;
+}
+
+.create-input-field{
+    padding-left: 10px;
+}
+
+.create-form-info{
+    margin-bottom: .5em;
+}
