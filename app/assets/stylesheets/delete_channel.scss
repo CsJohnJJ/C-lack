@@ -1,17 +1,17 @@
 .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
+  display: none; 
+  position: fixed;
+  z-index: 1; 
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  width: 100%; 
+  height: 100%;
+  overflow: auto; 
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4); 
 }
 
-/* Modal Content/Box */
+
 .modal-content {
   background-color: #fefefe;
     margin: 15% auto;
@@ -24,7 +24,6 @@
     justify-content: center
 }
 
-/* The Close Button */
 .close, .modal-yes {
   color: #aaa;
   float: center;
@@ -33,8 +32,7 @@
     border: 1px solid transparent;
 }
 
-.close:hover,
-.close:focus {
+.close:hover, .close:focus {
   color: red;
   text-decoration: none;
   cursor: pointer;
