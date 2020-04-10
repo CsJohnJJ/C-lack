@@ -14,27 +14,42 @@
 /* Modal Content/Box */
 .modal-content {
   background-color: #fefefe;
-  margin: 15% auto; /* 15% from the top and centered */
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 5px;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center
 }
 
 /* The Close Button */
-.close {
+.close, .modal-yes {
   color: #aaa;
-  float: right;
+  float: center;
   font-size: 28px;
   font-weight: bold;
+    border: 1px solid transparent;
 }
 
 .close:hover,
 .close:focus {
-  color: black;
+  color: red;
   text-decoration: none;
   cursor: pointer;
 }
 
-.modal-text, .modal-yes{
+.modal-yes:hover, .modal-yes:focus{
+    color: green;
+}
+
+.modal-text{
     color: black;
+}
+
+.modal-yes{
+    // color: green;
+    margin-left: 20px;
+    margin-right: 20px;
 }

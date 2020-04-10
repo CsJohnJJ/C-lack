@@ -22,6 +22,9 @@
     display: flex;
     justify-content: space-between;
 }
+.channelli-outer:hover{
+    background: #350D36
+}
 
 .channelli-outer:hover #myBtn{
     display: flex;
@@ -86,7 +89,7 @@
     margin-right: 15px;
 }
 
-.channel-delete:hover{
+#myBtn:hover{
     text-shadow: 0 0 3px white;
 }
 

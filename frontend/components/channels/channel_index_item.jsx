@@ -8,7 +8,7 @@ class ChannelIndexItem extends React.Component {
     this.toggleSelect = this.toggleSelect.bind(this);
     this.prevId;
     this.removeChannel = this.removeChannel.bind(this);
-    this.state = this.props.channel;
+    this.state = { channel: this.props.channel};
     // this.modal = document.getElementById("myModal");
   }
 
@@ -30,8 +30,10 @@ class ChannelIndexItem extends React.Component {
 
   }
 
-  componentDidUnmount(){
-    
+  componentWillUnmount(){
+
+    this.setState({ channel: this.state });
+
   }
 
   componentDidMount(){
@@ -79,7 +81,7 @@ class ChannelIndexItem extends React.Component {
             <div id="myModal" className="modal">
               <div className="modal-content">
                 {/* <span className="close">X</span> */}
-                <p className="modal-text">Confirm channel deletion</p>
+                <p className="modal-text">Confirm channel deletion:</p>
                 <button className="modal-yes">Yes</button>
                 <span className="close">No</span>
               </div>
@@ -91,7 +93,7 @@ class ChannelIndexItem extends React.Component {
     }
 
     return (
-      <div className="channelli-outer">
+      <div className="channelli-outer" id={this.props.channel.name}>
         <Link
           to={`/main/channels/${this.props.channel.id}`}
           onClick={this.toggleSelect}
