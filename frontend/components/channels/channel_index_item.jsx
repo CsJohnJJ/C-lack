@@ -9,6 +9,7 @@ class ChannelIndexItem extends React.Component {
     this.prevId;
     this.removeChannel = this.removeChannel.bind(this);
     this.state = this.props.channel;
+    // this.modal = document.getElementById("myModal");
   }
 
   toggleSelect() {
@@ -18,27 +19,77 @@ class ChannelIndexItem extends React.Component {
 
   removeChannel(e) {
     e.preventDefault();
-    let path ="/main/channels/1";
-    this.props.history.location.pathname === "/main/channels/1" ? path = "/main/channels/2" : null
-
+    // let path ="/main/channels/1";
+    // this.props.history.location.pathname === "/main/channels/1" ? path = "/main/channels/2" : null
+   let modal = document.getElementById("myModal");
+   modal.style.display = "none";
     this.props
       .deleteChannel(this.props.channel.id)
-      .then(() => this.props.history.push(path));
+      // .then(() => this.props.history.push(path));
     // this.setState({ state: this.state })
+
+  }
+
+  componentDidUnmount(){
+    
+  }
+
+  componentDidMount(){
+    let modal = document.getElementById("myModal");
+    let btn = document.getElementById("myBtn");
+    let span = document.getElementsByClassName("close")[0];
+    let yes = document.getElementsByClassName("modal-yes")[0];
+    if (btn){
+      btn.onclick = function () {
+        modal.style.display = "block";
+      };
+    };
+
+    if (span) {
+      span.onclick = function () {
+        modal.style.display = "none";
+      };
+    }
+    if (yes){
+      yes.onclick = this.removeChannel;
+      // modal.style.display = "none";
+    }
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    };
   }
 
   render() {
-    let canDelete = () => {};
+    // let canDelete = () => {};
+    let canDelete;
     let channelId = this.props.channel.id;
     if (this.props.currentUser.id === this.props.channel.admin_id) {
-      canDelete = () => {
-        return (
-          <button onClick={this.removeChannel} className="channel-delete">
-            x
-          </button>
-        );
-      };
+      // canDelete = () => {
+        // return (
+        //   <button onClick={this.removeChannel} className="channel-delete">
+        //     x
+        //   </button>
+        // );
+
+        canDelete =
+          <>
+            <button id="myBtn">X</button>
+            <div id="myModal" className="modal">
+              <div className="modal-content">
+                {/* <span className="close">X</span> */}
+                <p className="modal-text">Confirm channel deletion</p>
+                <button className="modal-yes">Yes</button>
+                <span className="close">No</span>
+              </div>
+            </div>
+          </>
+      
+
+      // };
     }
+
     return (
       <div className="channelli-outer">
         <Link
@@ -49,7 +100,7 @@ class ChannelIndexItem extends React.Component {
             # {this.props.channel.name}
           </li>
         </Link>
-        {canDelete()}
+        {canDelete}
       </div>
     );
   }

@@ -23,7 +23,7 @@
     justify-content: space-between;
 }
 
-.channelli-outer:hover .channel-delete{
+.channelli-outer:hover #myBtn{
     display: flex;
 }
 
@@ -81,7 +81,7 @@
     background-color: #350D36;
 }
 
-.channel-delete{
+#myBtn{
     display: none;
     margin-right: 15px;
 }
