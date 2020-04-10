@@ -30,9 +30,7 @@ class ChannelIndexItem extends React.Component {
   }
 
   // componentWillUnmount(){
-
   //   this.setState({ channel: this.state });
-
   // }
 
   componentDidMount(){
@@ -87,9 +85,10 @@ class ChannelIndexItem extends React.Component {
             </div>
           </>
       
-
       // };
     }
+
+    
 
     return (
       <div className="channelli-outer" id={this.props.channel.name}>

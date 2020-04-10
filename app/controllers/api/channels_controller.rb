@@ -20,6 +20,8 @@ class Api::ChannelsController < ApplicationController
         @channel.admin_id = current_user.id
 
         if @channel.save
+            @channel.memberships << Membership.create!(user_id: @channel.admin_id, memberable_id: @channel.id, memberable_type: 'Channel')
+
             render :show
         else
             render json: @channel.errors.full_messages, status: 422
