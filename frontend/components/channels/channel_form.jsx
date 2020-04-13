@@ -70,7 +70,7 @@ class ChannelForm extends React.Component {
 
           <div className="create-form-info">
             <p className="create-detail-info">
-              Create a channels for your team to communicates. They're best when
+              Create a channel for your team to communicate. They're best when
               organized around a topic - marketing, for example.
             </p>
           </div>
