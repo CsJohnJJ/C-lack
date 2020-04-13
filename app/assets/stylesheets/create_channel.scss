@@ -5,28 +5,6 @@
   bottom: 0;
   right: 0;
   left: 0;
-  
-//   background: rgba(0, 0, 0, 0.6);
-  z-index: 2;
-  cursor: default;
-  animation: fadeIn 0.3s;
-}
-
-.channel-form {
-    position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 3;
-}
-
-.channel-create-form{
-    // display: none;
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
 //   background: rgba(0, 0, 0, 0.6);
   z-index: 2;
   cursor: default;
@@ -139,4 +117,9 @@
 
 .create-form-info{
     margin-bottom: .5em;
+}
+
+
+.active-model{
+    display: block;
 }
