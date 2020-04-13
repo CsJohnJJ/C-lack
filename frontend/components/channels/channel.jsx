@@ -58,6 +58,9 @@ class Channel extends React.Component {
     if (this.bottom.current) {
       this.bottom.current.scrollIntoView();
     }
+    // const { fetchChannelMessages } = this.props;
+    //  this.getCurrentChannel(this.channelId);
+    //  fetchChannelMessages(this.channelId);
   }
 
   render() {

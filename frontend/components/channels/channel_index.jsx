@@ -12,7 +12,7 @@ class ChannelIndex extends React.Component {
   componentDidMount() {
     this.props.fetchUserChannels(this.props.currentUser.id);
   }
-
+  
   createCh() {
     this.props.createChannel(channel);
   }
