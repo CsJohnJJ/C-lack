@@ -61,35 +61,25 @@ class ChannelIndexItem extends React.Component {
   }
 
   render() {
-    // let canDelete = () => {};
+
     let canDelete;
     let channelId = this.props.channel.id;
     if (this.props.currentUser.id === this.props.channel.admin_id) {
-      // canDelete = () => {
-        // return (
-        //   <button onClick={this.removeChannel} className="channel-delete">
-        //     x
-        //   </button>
-        // );
-
-        canDelete =
-          <>
-            <button id="myBtn">X</button>
-            <div id="myModal" className="modal">
-              <div className="modal-content">
-                {/* <span className="close">X</span> */}
-                <p className="modal-text">Confirm channel deletion:</p>
-                <button className="modal-yes">Yes</button>
-                <span className="close">No</span>
-              </div>
+      canDelete =
+        <>
+          <button id="myBtn">X</button>
+          <div id="myModal" className="modal">
+            <div className="modal-content">
+              <p className="modal-text">Confirm channel deletion:</p>
+              <button className="modal-yes">Yes</button>
+              <span className="close">No</span>
             </div>
-          </>
-      
-      // };
+          </div>
+        </>
     }
 
-    
 
+    
     return (
       <div className="channelli-outer" id={this.props.channel.name}>
         <Link
