@@ -49,7 +49,7 @@ class ChannelIndex extends React.Component {
           </Link>
         </div>
         <ul className="channelname-ul">{channelList}</ul>
-        <div className="whole-placeholder">
+        {/* <div className="whole-placeholder">
           <div>
             <h3 className="channel-title">Direct Messages</h3>
           </div>
@@ -58,7 +58,7 @@ class ChannelIndex extends React.Component {
             <li className="dm-placeholder">@ John Doe</li>
             <li className="dm-placeholder">@ Greg, the TA</li>
           </ul>
-        </div>
+        </div> */}
       </div>
     );
   }
